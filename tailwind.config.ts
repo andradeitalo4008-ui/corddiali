@@ -1,18 +1,15 @@
 import type { Config } from "tailwindcss";
-
 const config: Config = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./components/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       colors: {
-        ink: "#0A0A0A",
+        ink: "#080808",
         graphite: "#111111",
-        copper: "#B86E45",
-        copperSoft: "#D09977",
-        ivory: "#F3EEE8"
+        ivory: "#F1ECE7",
+        copper: "#B66D45",
+        copperSoft: "#D19A79",
+        stone: "#A29A94"
       },
       fontFamily: {
         sans: ["Arial", "Helvetica", "sans-serif"],
@@ -20,6 +17,6 @@ const config: Config = {
       }
     }
   },
-  plugins: [],
+  plugins: []
 };
 export default config;

@@ -1,20 +1,29 @@
-# Corddiali Site
+# Corddiali V3 — Prompt Mestre
 
-Primeira versão do site institucional premium da Corddiali.
+Versão criada para seguir a estrutura do prompt mestre do site Corddiali.
 
-## Rodar localmente
+## Inclui
+- Hero cinematográfico
+- Manifesto
+- Problema da construção tradicional
+- Método Corddiali / Turnkey
+- Frase de impacto fullscreen
+- Projetos em layout editorial
+- Números animados
+- Engenharia e tradição
+- Timeline
+- Comparação Tradicional × Corddiali
+- Excelência técnica
+- Depoimentos
+- CTA final
+- Páginas individuais de projetos
+- SEO básico, sitemap e robots
+- Mobile responsivo
+- Placeholders locais para não quebrar imagens antes de inserir as fotos reais
 
-1. Instale Node.js 18+.
-2. Rode:
-   npm install
-3. Depois:
-   npm run dev
-4. Acesse:
-   http://localhost:3000
-
-## Antes de publicar
-
-- Coloque as imagens reais na pasta public/images.
-- Atualize o WhatsApp em app/contato/page.tsx.
-- Revise todos os textos e números institucionais.
-- Depois faça push no GitHub e importe o repositório na Vercel.
+## Antes de publicar definitivamente
+1. Trocar placeholders pelas fotos reais.
+2. Inserir logo oficial.
+3. Inserir WhatsApp e Instagram oficiais.
+4. Confirmar o domínio oficial.
+5. Revisar números e afirmações institucionais.

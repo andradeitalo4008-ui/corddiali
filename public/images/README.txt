@@ -1,8 +1,23 @@
-Coloque aqui as imagens reais da Corddiali com estes nomes:
+Os arquivos SVG nesta pasta são placeholders intencionais.
 
-casa-roma.jpg
-adega-vino.jpg
-smart-living.jpg
-porto-santo.jpg
+Substitua depois por fotos reais mantendo os nomes (ou atualize data/projects.ts):
+casa-roma.svg
+adega-vino.svg
+smart-living.svg
+porto-santo.svg
+casas-lages.svg
+arezzo.svg
 
-Depois, substitua ou acrescente novos projetos em data/projects.ts.
+Para o hero:
+hero.svg
+
+Para manifesto:
+manifesto.svg
+
+Para quebra de impacto:
+impacto.svg
+
+Para excelência técnica:
+tecnica.svg
+
+Pode trocar por .jpg/.webp/.avif, desde que atualize os caminhos no código.
