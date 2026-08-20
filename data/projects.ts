@@ -15,7 +15,7 @@ export const projects: Project[] = [
     title: "Casa Roma — Vivapark",
     category: "Residencial de Luxo",
     location: "Porto Belo / SC",
-    imagem: "/images/casa roma viva parque/Imagem do WhatsApp 2026-08-20 às 13:54:11 (1).jpeg",
+    image: "/images/casa roma viva parque/Imagem do WhatsApp 2026-08-20 às 13:54:11 (1).jpeg",
     description: "Residência contemporânea de alto padrão executada com gestão de engenharia e modelo Preço Fechado.",
     highlights: ["Arquitetura contemporânea", "Engenharia de precisão", "Gestão Turnkey"]
   },
