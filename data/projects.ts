@@ -5,9 +5,9 @@ export type Project = {
   location: string;
   area?: string;
   image: string;
+  gallery?: string[];
   description: string;
   highlights: string[];
-};
 
 export const projects: Project[] = [
   {
@@ -16,6 +16,11 @@ export const projects: Project[] = [
     category: "Residencial de Luxo",
     location: "Porto Belo / SC",
     image: "/images/casa-roma-viva-park/casa-roma-01.jpeg",
+  gallery: [
+  "/images/casa-roma-viva-park/casa-roma-02.jpeg",
+  "/images/casa-roma-viva-park/casa-roma-03.jpeg",
+  "/images/casa-roma-viva-park/casa-roma-04.jpeg",
+],
     description: "Residência contemporânea de alto padrão executada com gestão de engenharia e modelo Preço Fechado.",
     highlights: ["Arquitetura contemporânea", "Engenharia de precisão", "Gestão Turnkey"]
   },
