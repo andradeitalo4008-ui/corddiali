@@ -14,7 +14,7 @@ export const projects: Project[] = [
   {
     slug: "casa-roma",
     title: "Casa Roma — Vivapark",
-    category: "Residencial de Luxo",
+    category: "Residencial de Alto Padrão",
     location: "Porto Belo / SC",
     image: "/images/projetos/casa-roma/casa-roma-01.webp",
     gallery: [
@@ -23,7 +23,7 @@ export const projects: Project[] = [
       "/images/projetos/casa-roma/casa-roma-04.webp",
     ],
     description:
-      "Residência contemporânea de alto padrão no Vivapark Porto Belo, com execução orientada à qualidade, precisão construtiva e excelência nos acabamentos.",
+      "Residência contemporânea de alto padrão no Vivapark Porto Belo, executada com foco em qualidade construtiva, precisão técnica e excelência nos acabamentos.",
     highlights: [
       "Vivapark Porto Belo",
       "Arquitetura contemporânea",
@@ -35,7 +35,7 @@ export const projects: Project[] = [
   {
     slug: "casa-all-wert",
     title: "Casa All Resort — Porto Belo",
-    category: "Residencial de Luxo",
+    category: "Residencial de Alto Padrão",
     location: "Porto Belo / SC",
     image: "/images/projetos/casa-all-wert/all-wert-01.webp",
     gallery: [
@@ -44,7 +44,7 @@ export const projects: Project[] = [
       "/images/projetos/casa-all-wert/all-wert-04.webp",
     ],
     description:
-      "Residência de alto padrão localizada no All Resort Porto Belo, complexo urbanístico de 220 hectares que integra moradia, lazer, esporte, natureza e infraestrutura de padrão internacional.",
+      "Residência de alto padrão inserida no All Resort Porto Belo, complexo urbanístico que integra moradia, lazer, esporte, natureza e infraestrutura de padrão internacional.",
     highlights: [
       "All Resort Porto Belo",
       "Complexo de 220 hectares",
@@ -60,9 +60,7 @@ export const projects: Project[] = [
     category: "Gastronomia & Hospitality",
     location: "Balneário Camboriú / SC",
     image: "/images/projetos/adega-vino/adega-vino-01.webp",
-    gallery: [
-      "/images/projetos/adega-vino/adega-vino-01.webp",
-    ],
+    gallery: [],
     description:
       "Execução comercial de alto padrão para o restaurante Vino! em Balneário Camboriú, com atenção aos acabamentos, iluminação e experiência do ambiente.",
     highlights: [
@@ -79,14 +77,13 @@ export const projects: Project[] = [
     location: "Itajaí / SC",
     image: "/images/projetos/smart-living/smart-living-01.webp",
     gallery: [
-      "/images/projetos/smart-living/smart-living-01.webp",
       "/images/projetos/smart-living/smart-living-02.webp",
     ],
     description:
       "Condomínio residencial modular contemporâneo desenvolvido com foco em eficiência construtiva, velocidade de execução e soluções modernas.",
     highlights: [
       "Construção modular",
-      "Eficiência",
+      "Eficiência construtiva",
       "Velocidade de execução",
     ],
   },
@@ -99,71 +96,71 @@ export const projects: Project[] = [
     area: "4.940 m²",
     image: "/images/projetos/porto-santo/porto-santo-01.webp",
     gallery: [
-      "/images/projetos/porto-santo/porto-santo-01.webp",
       "/images/projetos/porto-santo/porto-santo-02.webp",
       "/images/projetos/porto-santo/porto-santo-03.webp",
     ],
     description:
-      "Empreendimento vertical de grande porte em Porto Belo, desenvolvido com foco em qualidade construtiva e excelência de execução.",
+      "Gestão completa do empreendimento junto à construtora. São 4.940 m² de obra distribuídos em 16 pavimentos, com lazer no rooftop, apartamentos de 120 m² e penthouse de 240 m².",
     highlights: [
-      "4.940 m²",
+      "4.940 m² de obra",
       "16 pavimentos",
-      "18 apartamentos + penthouses",
+      "Lazer no rooftop",
+      "Apartamentos de 120 m²",
+      "Penthouse de 240 m²",
     ],
   },
 
   {
     slug: "bethania",
-    title: "Casa Bethânia",
-    category: "Residencial de Alto Padrão",
+    title: "Bethânia Residence",
+    category: "Residencial Contemporâneo",
     location: "Lages / SC",
+    area: "+300 m²",
     image: "/images/projetos/bethania/bethania-01.webp",
-    gallery: [
-      "/images/projetos/bethania/bethania-01.webp",
-    ],
+    gallery: [],
     description:
-      "Residência de alto padrão desenvolvida com atenção à arquitetura, integração dos ambientes e qualidade construtiva.",
+      "Casa com mais de 300 m² distribuídos em três andares, com linguagem contemporânea e execução de alto padrão em Lages, na Serra Catarinense.",
     highlights: [
-      "Residencial de alto padrão",
       "Mais de 300 m²",
-      "Execução premium",
+      "03 andares",
+      "Estilo contemporâneo",
+      "Lages / SC",
     ],
   },
 
   {
     slug: "jardim-panoramico",
-    title: "Casa Jardim Panorâmico",
-    category: "Residencial de Alto Padrão",
+    title: "Jardim Panorâmico",
+    category: "Residencial Contemporâneo",
     location: "Lages / SC",
     area: "312 m²",
     image:
       "/images/projetos/jardim-panoramico/jardim-panoramico-01.webp",
-    gallery: [
-      "/images/projetos/jardim-panoramico/jardim-panoramico-01.webp",
-    ],
+    gallery: [],
     description:
-      "Residência contemporânea de 312 m², projetada e executada com foco em conforto, integração e elevado padrão construtivo.",
+      "Casa com 312 m² executada na cidade de Lages, na Serra Catarinense, com foco em qualidade construtiva e arquitetura residencial contemporânea.",
     highlights: [
       "312 m²",
-      "Arquitetura contemporânea",
-      "Alto padrão construtivo",
+      "Lages / SC",
+      "Serra Catarinense",
+      "Residencial contemporâneo",
     ],
   },
 
   {
     slug: "arezzo",
-    title: "Arezzo",
-    category: "Varejo de Luxo",
+    title: "Lojas Arezzo",
+    category: "Varejo Premium",
     location: "Santa Catarina",
     image: "/images/projetos/arezzo/arezzo-01.webp",
     gallery: [
-      "/images/projetos/arezzo/arezzo-01.webp",
       "/images/projetos/arezzo/arezzo-02.webp",
     ],
     description:
-      "Execução de lojas franqueadas da marca Arezzo em Santa Catarina, seguindo padrões de identidade, acabamento e experiência de varejo.",
+      "Instalação de lojas Arezzo em Santa Catarina, com execução alinhada ao padrão de identidade, acabamento e experiência da marca.",
     highlights: [
-      "Execução de lojas",
+      "Instalação de lojas",
+      "Santa Catarina",
       "Padronização de marca",
       "Varejo premium",
     ],
