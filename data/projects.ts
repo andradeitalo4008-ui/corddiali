@@ -8,7 +8,7 @@ export type Project = {
   gallery?: string[];
   description: string;
   highlights: string[];
-
+};
 export const projects: Project[] = [
   {
     slug: "casa-roma",
