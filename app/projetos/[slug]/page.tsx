@@ -7,13 +7,11 @@ import Link from "next/link";
 export function generateStaticParams() {
   return projects.map(p => ({ slug: p.slug }));
 }
-
 export default function Project({ params }: { params: { slug: string } }) {
-  const index = projects.findIndex(p => p.slug === params.slug);
+  const index = projects.findIndex((p) => p.slug === params.slug);
   if (index < 0) return notFound();
   const p = projects[index];
   const next = projects[(index + 1) % projects.length];
-
   return (
     <main>
       <Header />
