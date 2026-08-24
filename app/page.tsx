@@ -14,7 +14,7 @@ export default function Home() {
       <Header />
 
       <section className="relative min-h-screen flex items-end overflow-hidden">
-        <img src="/images/hero.svg" className="absolute inset-0 h-full w-full object-cover" alt="Projeto arquitetônico Corddiali" />
+        <img src="/images/home/08-bethania-lages-inicial.webp" className="absolute inset-0 h-full w-full object-cover" alt="Projeto arquitetônico Corddiali" />
         <div className="absolute inset-0 hero-overlay" />
         <div className="container-x relative z-10 pb-20 pt-36">
           <div className="max-w-4xl">
