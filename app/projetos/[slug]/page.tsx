@@ -35,11 +35,23 @@ export default function Project({ params }: { params: { slug: string } }) {
             <div className="eyebrow">Conceito</div>
             <p className="text-xl leading-9 mt-5 text-white/80">{p.description}</p>
 
-            <div className="grid md:grid-cols-2 gap-4 mt-10">
-              <div className="aspect-[4/5] bg-white/5 grid place-items-center text-white/25 text-xs">GALERIA — FOTO REAL</div>
-              <div className="aspect-[4/5] bg-white/5 grid place-items-center text-white/25 text-xs">GALERIA — FOTO REAL</div>
-            </div>
-          </div>
+           <div className="grid md:grid-cols-2 gap-4 mt-10">
+  <img
+    src="/images/casa-roma-viva-park/casa-roma-02.jpeg"
+    alt="Casa Roma — Vivapark"
+    className="w-full aspect-[4/5] object-cover"
+  />
+  <img
+    src="/images/casa-roma-viva-park/casa-roma-03.jpeg"
+    alt="Casa Roma — Vivapark"
+    className="w-full aspect-[4/5] object-cover"
+  />
+  <img
+    src="/images/casa-roma-viva-park/casa-roma-04.jpeg"
+    alt="Casa Roma — Vivapark"
+    className="w-full aspect-[4/5] object-cover md:col-span-2"
+  />
+</div>
 
           <aside className="border-l border-white/10 pl-8">
             <div className="eyebrow">Destaques</div>
