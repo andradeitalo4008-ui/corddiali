@@ -60,37 +60,22 @@ export default function Project({
               {p.description}
             </p>
 
-            {p.slug === "casa-roma" ? (
-              <div className="grid md:grid-cols-2 gap-4 mt-10">
-                <img
-                  src="/images/casa-roma-viva-park/casa-roma-02.jpeg"
-                  alt="Casa Roma — Vivapark"
-                  className="w-full aspect-[4/5] object-cover"
-                />
-
-                <img
-                  src="/images/casa-roma-viva-park/casa-roma-03.jpeg"
-                  alt="Casa Roma — Vivapark"
-                  className="w-full aspect-[4/5] object-cover"
-                />
-
-                <img
-                  src="/images/casa-roma-viva-park/casa-roma-04.jpeg"
-                  alt="Casa Roma — Vivapark"
-                  className="w-full aspect-[4/5] object-cover md:col-span-2"
-                />
-              </div>
-            ) : (
-              <div className="grid md:grid-cols-2 gap-4 mt-10">
-                <div className="aspect-[4/5] bg-white/5 grid place-items-center text-white/30">
-                  GALERIA — EDITORIAL
-                </div>
-
-                <div className="aspect-[4/5] bg-white/5 grid place-items-center text-white/30">
-                  GALERIA — EDITORIAL
-                </div>
-              </div>
-            )}
+          {p.gallery && p.gallery.length > 0 && (
+  <div className="grid md:grid-cols-2 gap-4 mt-10">
+    {p.gallery.map((image, index) => (
+      <img
+        key={image}
+        src={image}
+        alt={`${p.title} - imagem ${index + 1}`}
+        className={`w-full aspect-[4/5] object-cover ${
+          index === p.gallery!.length - 1 && p.gallery!.length % 2 !== 0
+            ? "md:col-span-2"
+            : ""
+        }`}
+      />
+    ))}
+  </div>
+)}
           </div>
 
           <aside className="border-l border-white/10 pl-8">
