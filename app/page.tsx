@@ -73,6 +73,13 @@ export default function Home() {
       </Reveal>
     </div>
   </div>
+      <div
+  className="pointer-events-none absolute bottom-0 left-0 right-0 h-44 z-[5]"
+  style={{
+    background:
+      "linear-gradient(to bottom, transparent 0%, rgba(16,24,32,0.35) 45%, #101820 100%)",
+  }}
+/>
 </section>
 
       <section className="section">
