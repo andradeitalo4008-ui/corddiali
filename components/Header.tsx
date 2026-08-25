@@ -18,12 +18,12 @@ export default function Header() {
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "glass border-b border-white/10" : "bg-transparent"}`}>
       <div className="container-x h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <div className="h-8 w-8 border border-copper text-copper grid place-items-center text-xs">C</div>
-          <div>
-            <div className="tracking-[.28em] text-sm">CORDDIALI</div>
-            <div className="text-[8px] tracking-[.14em] text-white/45">CONSTRUÇÕES PERSONALIZADAS</div>
-          </div>
-        </Link>
+  <img
+    src="/images/LOGOTIPO/logo-corddiali.png"
+    alt="Corddiali"
+    className="h-12 w-auto object-contain"
+  />
+</Link>
 
         <nav className="hidden md:flex items-center gap-8 text-[10px] uppercase tracking-[.14em] text-white/78">
           <Link href="/projetos">Projetos</Link>
