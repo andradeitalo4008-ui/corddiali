@@ -14,32 +14,30 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;background:var(--bg)}
 body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
 
   background:
-    radial-gradient(circle at 12% 18%, rgba(255,255,255,.08) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 72% 28%, rgba(255,255,255,.06) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 38% 68%, rgba(255,255,255,.05) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 88% 82%, rgba(255,255,255,.04) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 12% 18%, rgba(255,255,255,.07) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 72% 28%, rgba(255,255,255,.05) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 38% 68%, rgba(255,255,255,.04) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 88% 82%, rgba(255,255,255,.035) 0 1px, transparent 1.5px),
     linear-gradient(
       180deg,
-      #1f3547 0%,
-      #1d3243 30%,
-      #1b2f3f 60%,
-      #192b3a 80%,
-      #172936 100%
+      #1d3243 0%,
+      #1b3040 30%,
+      #192d3c 60%,
+      #172a38 80%,
+      #152632 100%
     );
 
   background-size:
-    230px 230px,
-    310px 310px,
-    390px 390px,
-    470px 470px,
+    240px 240px,
+    320px 320px,
+    400px 400px,
+    480px 480px,
     100% 100%;
 
   background-attachment: fixed;
