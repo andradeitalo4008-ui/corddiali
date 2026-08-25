@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root{
---bg:#172936;
+--bg:#080d13;
   --panel:#111111;
   --text:#F1ECE7;
   --muted:#A29A94;
@@ -14,24 +14,26 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;background:var(--bg)}
 body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
-body {
-  margin: 0;
-  color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
 
   background:
-    radial-gradient(circle at 12% 18%, rgba(255,255,255,.07) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 72% 28%, rgba(255,255,255,.05) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 38% 68%, rgba(255,255,255,.04) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 88% 82%, rgba(255,255,255,.035) 0 1px, transparent 1.5px),
-   linear-gradient(
-  180deg,
-#101820 0%,
-#111d27 25%,
-#132431 50%,
-#142936 75%,
-#152c3a 100%
-);
+    radial-gradient(circle at 12% 18%, rgba(255,255,255,.16) 0 1px, transparent 1.4px),
+    radial-gradient(circle at 72% 28%, rgba(255,255,255,.12) 0 1px, transparent 1.4px),
+    radial-gradient(circle at 38% 68%, rgba(255,255,255,.10) 0 1px, transparent 1.4px),
+    radial-gradient(circle at 88% 82%, rgba(255,255,255,.08) 0 1px, transparent 1.4px),
+    linear-gradient(
+      180deg,
+      #0b1017 0%,
+      #0c121b 25%,
+      #0d1520 50%,
+      #0b121b 75%,
+      #080d13 100%
+    );
 
   background-size:
     240px 240px,
