@@ -19,9 +19,9 @@ export default function Home() {
         <div className="container-x relative z-10 pb-20 pt-36">
           <div className="max-w-4xl">
             <Reveal>
-              <div className="eyebrow">Engenharia • Gestão • Confiança</div>
+              <div className="eyebrow">Construtora no sistema Turnkey</div>
               <h1 className="display text-5xl md:text-7xl lg:text-8xl mt-4">
-                Projetos extraordinários<br />exigem execução à altura.
+               Projetos extraordinários<br />exigem construção à altura.
               </h1>
               <p className="mt-6 max-w-xl text-white/72 text-lg">
                 Construções personalizadas de alto padrão com engenharia, gestão integral e preço fechado.
@@ -80,9 +80,9 @@ export default function Home() {
         <div className="container-x">
           <div className="eyebrow">O Método Corddiali</div>
           <h2 className="display text-5xl md:text-7xl mt-4">Turnkey.<br />Do projeto às chaves.</h2>
-          <p className="muted mt-6 max-w-3xl text-lg leading-8">
-            A Corddiali assume integralmente a execução da obra, coordenando engenharia, fornecedores, cronograma, orçamento e acabamentos.
-          </p>
+         <p className="muted mt-6 max-w-3xl text-lg leading-8">
+  Transformamos projetos em realidade com a segurança de um contrato a preço fechado: cuidamos de cada etapa da engenharia à entrega final, sem surpresas no cronograma ou no orçamento.
+</p>
           <div className="grid md:grid-cols-4 gap-8 mt-12">
             {[
               ["Preço Fechado", "Valor definido contratualmente conforme o escopo estabelecido."],
