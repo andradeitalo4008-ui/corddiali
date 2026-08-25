@@ -13,28 +13,67 @@ export default function Home() {
     <main>
       <Header />
 
-      <section className="relative min-h-screen flex items-end overflow-hidden">
-        <img src="/images/home/08-bethania-lages-inicial.webp" className="absolute inset-0 h-full w-full object-cover" alt="Projeto arquitetônico Corddiali" />
-        <div className="absolute inset-0 hero-overlay" />
-        <div className="container-x relative z-10 pb-20 pt-36">
-          <div className="max-w-4xl">
-            <Reveal>
-              <div className="eyebrow">Construtora no sistema Turnkey</div>
-              <h1 className="display text-5xl md:text-7xl lg:text-8xl mt-4">
-               Projetos extraordinários<br />exigem construção à altura.
-              </h1>
-              <p className="mt-6 max-w-xl text-white/72 text-lg">
-                Construções personalizadas de alto padrão com engenharia, gestão integral e preço fechado.
-              </p>
-              <div className="mt-8 flex gap-3 flex-wrap">
-                <Link className="btn btn-primary" href="/metodo">Conheça nosso método <ArrowRight size={14} /></Link>
-                <Link className="btn" href="/projetos">Explorar projetos <ArrowRight size={14} /></Link>
-              </div>
-            </Reveal>
+    <section className="relative min-h-screen flex items-end overflow-hidden">
+  <img
+    src="/images/home/08-bethania-lages-inicial.webp"
+    alt="Projeto residencial Corddiali"
+    className="absolute inset-0 h-full w-full object-cover"
+  />
+
+  <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,7,7,0.88)_0%,rgba(7,7,7,0.72)_34%,rgba(7,7,7,0.28)_62%,rgba(7,7,7,0.08)_100%)]" />
+
+  <div className="container-x relative z-10 pb-16 pt-40 md:pb-20 md:pt-44">
+    <div className="max-w-[760px]">
+      <Reveal>
+        <div className="mb-16">
+          <div className="text-[11px] md:text-xs uppercase tracking-[0.34em] text-[#c7a46a]">
+            Construtora no sistema
           </div>
+
+          <div className="mt-3 text-2xl md:text-4xl uppercase tracking-[0.38em] font-light text-[#c7a46a]">
+            Turnkey
+          </div>
+
+          <div className="mt-6 h-px w-24 bg-[#c7a46a]/80" />
         </div>
-        <div className="absolute bottom-6 right-8 text-[9px] uppercase tracking-[.2em] text-white/45">Scroll ↓</div>
-      </section>
+
+        <h1 className="max-w-[720px] text-[46px] leading-[0.98] md:text-[72px] lg:text-[82px] font-light tracking-[-0.035em] text-white">
+          Projetos extraordinários
+          <br />
+          exigem{" "}
+          <span className="italic text-[#c7a46a]">
+            construção
+          </span>
+          <br />
+          à altura.
+        </h1>
+
+        <p className="mt-8 max-w-xl text-base md:text-lg leading-8 text-white/72">
+          Construções personalizadas de alto padrão com engenharia,
+          gestão integral e preço fechado.
+        </p>
+
+        <div className="mt-10 flex flex-wrap items-center gap-5 md:gap-8">
+          <Link
+            className="inline-flex items-center gap-4 border border-[#c7a46a] px-6 py-4 text-[11px] uppercase tracking-[0.14em] text-white transition hover:bg-[#c7a46a]/10"
+            href="/projetos"
+          >
+            Conheça nossos projetos
+            <ArrowRight size={15} />
+          </Link>
+
+          <Link
+            className="group inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.14em] text-white"
+            href="/metodo"
+          >
+            <span>Nosso método</span>
+            <span className="h-px w-16 bg-[#c7a46a] transition-all group-hover:w-20" />
+          </Link>
+        </div>
+      </Reveal>
+    </div>
+  </div>
+</section>
 
       <section className="section">
         <div className="container-x grid md:grid-cols-2 gap-16 items-center">
