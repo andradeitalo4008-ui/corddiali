@@ -24,14 +24,14 @@ body {
     radial-gradient(circle at 72% 28%, rgba(255,255,255,.05) 0 1px, transparent 1.5px),
     radial-gradient(circle at 38% 68%, rgba(255,255,255,.04) 0 1px, transparent 1.5px),
     radial-gradient(circle at 88% 82%, rgba(255,255,255,.035) 0 1px, transparent 1.5px),
-    linear-gradient(
-      180deg,
-      #1d3243 0%,
-      #1b3040 30%,
-      #192d3c 60%,
-      #172a38 80%,
-      #152632 100%
-    );
+   linear-gradient(
+  180deg,
+  #172735 0%,
+  #142431 25%,
+  #11212d 50%,
+  #0f1d28 75%,
+  #0d1922 100%
+)
 
   background-size:
     240px 240px,
