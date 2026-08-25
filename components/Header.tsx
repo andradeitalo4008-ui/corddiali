@@ -19,7 +19,7 @@ export default function Header() {
       <div className="container-x h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
   <img
-    src="/images/LOGOTIPO/logo-corddiali.png"
+  src="/images/LOGOTIPO/corddiali-logo.png"
     alt="Corddiali"
     className="h-12 w-auto object-contain"
   />
