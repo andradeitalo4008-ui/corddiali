@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root{
- --bg:#1b3042;
+--bg:#172936;
   --panel:#111111;
   --text:#F1ECE7;
   --muted:#A29A94;
@@ -22,24 +22,27 @@ body::before {
   pointer-events: none;
 
   background:
-    radial-gradient(circle at 12% 18%, rgba(255,255,255,.20) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 72% 28%, rgba(255,255,255,.14) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 38% 68%, rgba(255,255,255,.11) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 88% 82%, rgba(255,255,255,.10) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 12% 18%, rgba(255,255,255,.08) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 72% 28%, rgba(255,255,255,.06) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 38% 68%, rgba(255,255,255,.05) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 88% 82%, rgba(255,255,255,.04) 0 1px, transparent 1.5px),
     linear-gradient(
       180deg,
-      #36566f 0%,
-      #29465e 35%,
-      #1b3449 68%,
-      #122736 100%
+      #1f3547 0%,
+      #1d3243 30%,
+      #1b2f3f 60%,
+      #192b3a 80%,
+      #172936 100%
     );
 
   background-size:
-    190px 190px,
-    260px 260px,
-    330px 330px,
-    410px 410px,
+    230px 230px,
+    310px 310px,
+    390px 390px,
+    470px 470px,
     100% 100%;
+
+  background-attachment: fixed;
 }
 a{color:inherit;text-decoration:none}
 img{display:block;width:100%}
