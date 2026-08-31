@@ -196,28 +196,95 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="container-x">
-          <div className="eyebrow">Engenharia e tradição</div>
-          <div className="grid md:grid-cols-2 gap-10 mt-8">
-            <div className="border border-white/10 p-8 md:p-10">
-              <div className="text-copper text-xs uppercase tracking-[.14em]">Eng. Guilherme De Carli</div>
-              <h3 className="display text-3xl mt-4">Sócio & Diretor Técnico — UDESC</h3>
-              <p className="muted mt-5 leading-7">
-                Engenheiro Civil com 16 anos de experiência no setor da construção civil, formado pela Universidade do Estado de Santa Catarina (UDESC). Iniciou sua carreira em Joinville (SC), atuando na gestão e execução de edifícios residenciais, onde desenvolveu sua base técnica e gerencial. Ao longo de sua trajetória, participou de obras residenciais, comerciais e industriais em diversas regiões do Brasil, acumulando amplo conhecimento em diferentes sistemas construtivos e métodos executivos. Entre seus principais trabalhos, destacam-se reformas e ampliações para grandes marcas, como unidades da rede Walmart e pontos de refino da Petrobras, além da construção de casas e edifícios de alto padrão em Santa Catarina. Há cinco anos, estabeleceu-se no litoral catarinense, com foco em Porto Belo e região da Costa Esmeralda, contribuindo diretamente para o desenvolvimento de empreendimentos de destaque e consolidando a atuação da Corddiali como referência em execução de obras e reformas de alta qualidade. + de 25.000 m² de obras gerenciadas.
-              </p>
-            </div>
-            <div className="border border-white/10 p-8 md:p-10">
-              <div className="text-copper text-xs uppercase tracking-[.14em]">Luisa Corrêa</div>
-              <h3 className="display text-3xl mt-4">Sócia — Gestão Executiva e Comercial</h3>
-              <p className="muted mt-5 leading-7">
-                Tradição familiar no mercado imobiliário catarinense desde 1998, relacionamento regional consolidado e foco em governança, transparência e experiência do cliente.
-              </p>
-            </div>
+     <section className="section">
+  <div className="container-x">
+    <div className="eyebrow">Engenharia e tradição</div>
+
+    {/* GUILHERME */}
+    <div className="grid md:grid-cols-[1.35fr_0.65fr] gap-10 md:gap-16 mt-8 items-start">
+      <div>
+        <div className="text-copper text-xs uppercase tracking-[.14em]">
+          Guilherme De Carli — Sócio
+        </div>
+
+        <h3 className="display text-3xl md:text-5xl mt-4">
+          Sócio & Diretor Técnico — UDESC
+        </h3>
+
+        <p className="muted mt-5 leading-7">
+          Engenheiro Civil com 16 anos de experiência no setor da construção civil,
+          formado pela Universidade do Estado de Santa Catarina (UDESC). Iniciou sua
+          carreira em Joinville (SC), atuando na gestão e execução de edifícios
+          residenciais, onde desenvolveu sua base técnica e gerencial. Ao longo de sua
+          trajetória, participou de obras residenciais, comerciais e industriais em
+          diversas regiões do Brasil, acumulando amplo conhecimento em diferentes
+          sistemas construtivos e métodos executivos. Entre seus principais trabalhos,
+          destacam-se reformas e ampliações para grandes marcas, como unidades da rede
+          Walmart e pontos de refino da Petrobras, além da construção de casas e
+          edifícios de alto padrão em Santa Catarina. Há cinco anos, estabeleceu-se no
+          litoral catarinense, com foco em Porto Belo e região da Costa Esmeralda,
+          contribuindo diretamente para o desenvolvimento de empreendimentos de destaque
+          e consolidando a atuação da Corddiali como referência em execução de obras e
+          reformas de alta qualidade.
+        </p>
+
+        <div className="mt-8 border border-white/10 p-6 md:p-8 inline-block">
+          <div className="text-copper text-3xl md:text-5xl font-semibold">
+            + de 25.000 m²
+          </div>
+          <div className="text-xs uppercase tracking-[.16em] text-white/60 mt-2">
+            de obras gerenciadas
           </div>
         </div>
-      </section>
+      </div>
 
+      <div className="w-full">
+        <img
+          src="/images/foto-guilherme.jpeg"
+          alt="Guilherme De Carli"
+          className="w-full aspect-[3/4] object-cover object-top"
+        />
+      </div>
+    </div>
+
+    {/* LUISA */}
+    <div className="grid md:grid-cols-[0.65fr_1.35fr] gap-10 md:gap-16 mt-20 md:mt-28 items-start">
+      <div className="w-full">
+        <img
+          src="/images/foto-luiza.jpeg"
+          alt="Luisa Corrêa"
+          className="w-full aspect-[3/4] object-cover object-top"
+        />
+      </div>
+
+      <div>
+        <div className="text-copper text-xs uppercase tracking-[.14em]">
+          Luisa Corrêa — Sócia
+        </div>
+
+        <h3 className="display text-3xl md:text-5xl mt-4">
+          Gestão Executiva e Comercial
+        </h3>
+
+        <p className="muted mt-5 leading-7">
+          Com 28 anos e residente em Itapema há mais de duas décadas, Luisa Corrêa tem
+          sua trajetória fortemente ligada ao mercado imobiliário e da construção civil,
+          setor no qual sua família atua desde 1998. Empreendedora por natureza, é sócia
+          e administradora de uma empresa familiar que se dedica à gestão e ao
+          desenvolvimento de novos negócios e investimentos. Ao longo de sua carreira,
+          acompanhou de perto o trabalho de seu pai, Auri Corrêa, adquirindo experiência
+          em diferentes segmentos do setor, como fabricação de artefatos de cimento
+          (pavers), incorporação de edifícios residenciais pela LA Incorporadora,
+          construção de casas geminadas e administração de imóveis próprios. Sua vivência
+          prática e visão estratégica no mercado imobiliário contribuíram para a
+          consolidação da Corddiali, onde atua na gestão executiva e no relacionamento
+          com clientes e parceiros, garantindo uma operação sólida, transparente e
+          pautada pela excelência.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
       <section className="section bg-[#0f0f0f]">
         <div className="container-x">
           <div className="eyebrow">Processo Corddiali</div>
