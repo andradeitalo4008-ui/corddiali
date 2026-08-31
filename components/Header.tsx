@@ -17,11 +17,11 @@ export default function Header() {
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "glass border-b border-white/10" : "bg-transparent"}`}>
       <div className="container-x h-20 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3">
+     <Link href="/" className="flex items-center">
   <img
-  src="/images/corddiali-logo-branca.jpeg"
-    alt="Corddiali"
-    className="h-12 w-auto object-contain"
+    src="/images/corddiali_logo_transparente.png"
+    alt="Corddiali Construções Personalizadas"
+    className="h-16 md:h-20 w-auto object-contain"
   />
 </Link>
 
