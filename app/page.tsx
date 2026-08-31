@@ -204,7 +204,7 @@ export default function Home() {
               <div className="text-copper text-xs uppercase tracking-[.14em]">Eng. Guilherme De Carli</div>
               <h3 className="display text-3xl mt-4">Sócio & Diretor Técnico — UDESC</h3>
               <p className="muted mt-5 leading-7">
-                16 anos de experiência na construção civil executiva. Experiência em obras industriais e corporativas de grande porte, com histórico profissional relacionado a Walmart, Petrobras, Rogga S/A, M7, RFranco e De Carli.
+                Engenheiro Civil com 16 anos de experiência no setor da construção civil, formado pela Universidade do Estado de Santa Catarina (UDESC). Iniciou sua carreira em Joinville (SC), atuando na gestão e execução de edifícios residenciais, onde desenvolveu sua base técnica e gerencial. Ao longo de sua trajetória, participou de obras residenciais, comerciais e industriais em diversas regiões do Brasil, acumulando amplo conhecimento em diferentes sistemas construtivos e métodos executivos. Entre seus principais trabalhos, destacam-se reformas e ampliações para grandes marcas, como unidades da rede Walmart e pontos de refino da Petrobras, além da construção de casas e edifícios de alto padrão em Santa Catarina. Há cinco anos, estabeleceu-se no litoral catarinense, com foco em Porto Belo e região da Costa Esmeralda, contribuindo diretamente para o desenvolvimento de empreendimentos de destaque e consolidando a atuação da Corddiali como referência em execução de obras e reformas de alta qualidade. + de 25.000 m² de obras gerenciadas.
               </p>
             </div>
             <div className="border border-white/10 p-8 md:p-10">
