@@ -193,7 +193,6 @@ gallery: [
       "Varejo premium",
     ],
   },
-];
 {
   slug: "casacor-floripa",
   title: "CasaCor Floripa",
@@ -219,3 +218,4 @@ gallery: [
     "Detalhamento e precisão",
   ],
 },
+];
