@@ -70,23 +70,27 @@ export const projects: Project[] = [
     ],
   },
 
-  {
-    slug: "smart-living",
-    title: "Smart Living Container",
-    category: "Construção Modular",
-    location: "Itajaí / SC",
-    image: "/images/projetos/smart-living/smart-living-01.webp",
-    gallery: [
-      "/images/projetos/smart-living/smart-living-02.webp",
-    ],
-    description:
-      "Condomínio residencial modular contemporâneo desenvolvido com foco em eficiência construtiva, velocidade de execução e soluções modernas.",
-    highlights: [
-      "Construção modular",
-      "Eficiência construtiva",
-      "Velocidade de execução",
-    ],
-  },
+ {
+  slug: "smart-living",
+  title: "Smart Living Container",
+  category: "Construção Modular",
+  location: "Itajaí / SC",
+
+  image: "/images/projetos/smart-living/SmartLivingContainer-FOTO1.jpeg",
+
+  gallery: [
+    "/images/projetos/smart-living/SmartLivingContainer-PROJETO FRENTE.PNG",
+  ],
+
+  description:
+    "Condomínio residencial modular contemporâneo desenvolvido com foco em eficiência construtiva, racionalização de recursos e agilidade de execução.",
+
+  highlights: [
+    "Construção modular",
+    "Eficiência construtiva",
+    "Velocidade de execução",
+  ],
+},
 
   {
     slug: "porto-santo",
