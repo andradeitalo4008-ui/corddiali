@@ -37,12 +37,14 @@ export const projects: Project[] = [
     title: "Casa All Resort — Porto Belo",
     category: "Residencial de Alto Padrão",
     location: "Porto Belo / SC",
-    image: "/images/projetos/casa-all-wert/all-wert-01.webp",
-    gallery: [
-      "/images/projetos/casa-all-wert/all-wert-02.webp",
-      "/images/projetos/casa-all-wert/all-wert-03.webp",
-      "/images/projetos/casa-all-wert/all-wert-04.webp",
-    ],
+    image: "/images/projetos/casa-all-wert/all wert - fachada .jpg",
+
+gallery: [
+  "/images/projetos/casa-all-wert/all wert - externa.jpg",
+  "/images/projetos/casa-all-wert/all wert - externa ensolarado.jpg",
+  "/images/projetos/casa-all-wert/all wert - externa ensolarado2.jpg",
+],
+    
     description:
       "Residência de alto padrão inserida no All Resort Porto Belo, complexo urbanístico que integra moradia, lazer, esporte, natureza e infraestrutura de padrão internacional.",
     highlights: [
