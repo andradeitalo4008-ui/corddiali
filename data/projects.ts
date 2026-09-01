@@ -61,8 +61,24 @@ gallery: [
     title: "Adega Vino!",
     category: "Gastronomia & Hospitality",
     location: "Balneário Camboriú / SC",
-    image: "/images/projetos/adega-vino/adega-vino-01.webp",
-    gallery: [],
+    image: "/images/projetos/adega-vino/VINO-FOTO PRINCIPAL.PNG",
+
+gallery: [
+  "/images/projetos/adega-vino/VINO-ESCADA VERMELHA.PNG",
+  "/images/projetos/adega-vino/VINO-ESCADA VINHOS.jpeg",
+  "/images/projetos/adega-vino/VINO-FACHADA A NOITE.jpeg",
+  "/images/projetos/adega-vino/VINO-FOTO ROLHOMETRO.jpeg",
+  "/images/projetos/adega-vino/VINO-FRENTE.jpeg",
+  "/images/projetos/adega-vino/VINO-FUNDOS VISA DE CIMA.jpeg",
+  "/images/projetos/adega-vino/VINO-MESA DE FRENTE ESCADA.jpeg",
+  "/images/projetos/adega-vino/VINO-MESA DO LAGO.jpeg",
+  "/images/projetos/adega-vino/VINO-PORTA ENTRADA.jpeg",
+  "/images/projetos/adega-vino/VINO-PORTA FERRO.jpeg",
+  "/images/projetos/adega-vino/VINO-SALA 1.PNG",
+  "/images/projetos/adega-vino/VINO-SALA3.jpeg",
+  "/images/projetos/adega-vino/VINO-SEJA BEM VINO.PNG",
+  "/images/projetos/adega-vino/VINO-TETO DE TACA.jpeg",
+],
     description:
       "Execução comercial de alto padrão para o restaurante Vino! em Balneário Camboriú, com atenção aos acabamentos, iluminação e experiência do ambiente.",
     highlights: [
