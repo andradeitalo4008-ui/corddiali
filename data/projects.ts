@@ -94,11 +94,17 @@ gallery: [
   category: "Construção Modular",
   location: "Itajaí / SC",
 
-  image: "/images/projetos/smart-living/SmartLivingContainer-FOTO1.jpeg",
+ image: "/images/projetos/smart-living/SmartLivingContainer-FOTO PRINCIPAL PROJETO.PNG",
 
-  gallery: [
-    "/images/projetos/smart-living/SmartLivingContainer-PROJETO FRENTE.PNG",
-  ],
+gallery: [
+  "/images/projetos/smart-living/SmartLivingContainer 1 (1).jpeg",
+  "/images/projetos/smart-living/SmartLivingContainer 1 (2).jpeg",
+  "/images/projetos/smart-living/SmartLivingContainer 1 (3).jpeg",
+  "/images/projetos/smart-living/SmartLivingContainer-CORREDOR DE BAIXO.jpeg",
+  "/images/projetos/smart-living/SmartLivingContainer-CORREDOR DE CIMA.jpeg",
+  "/images/projetos/smart-living/SmartLivingContainer-FOTO1.jpeg",
+  "/images/projetos/smart-living/SmartLivingContainer-PROJETO FRENTE.PNG",
+],
 
   description:
     "Condomínio residencial modular contemporâneo desenvolvido com foco em eficiência construtiva, racionalização de recursos e agilidade de execução.",
