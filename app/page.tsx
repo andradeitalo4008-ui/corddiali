@@ -117,7 +117,7 @@ export default function Home() {
     A Corddiali assume a responsabilidade por construí-la.
   </span>
 </p>
-            </p>
+            
           </Reveal>
           <Reveal delay={0.1}>
             <img src="/images/manifesto.svg" className="min-h-[520px] object-cover" alt="Arquitetura contemporânea Corddiali" />
