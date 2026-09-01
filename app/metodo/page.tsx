@@ -14,7 +14,7 @@ export default function Metodo() {
           <div className="eyebrow">Método Corddiali</div>
           <h1 className="display text-5xl md:text-7xl mt-4">Turnkey. Do projeto às chaves.</h1>
           <p className="muted max-w-3xl text-lg leading-8 mt-6">
-            A Corddiali assume integralmente a execução da obra, coordenando engenharia, fornecedores, cronograma, orçamento e acabamentos.
+           Transformamos projetos em realidade com a segurança de um contrato a preço fechado: cuidamos de cada etapa da engenharia à entrega final, sem surpresas no cronograma ou no orçamento.
           </p>
 
           <div className="grid md:grid-cols-4 gap-8 mt-14">
