@@ -87,21 +87,36 @@ export default function Home() {
           <Reveal>
             <div className="eyebrow">Corddiali</div>
             <h2 className="display text-4xl md:text-6xl mt-4">Construção de casas de alto padrão em Santa Catarina</h2>
-            <p className="muted mt-6 text-lg leading-8">
-              A Corddiali é uma construtora especializada na construção de residências de alto padrão, para clientes que buscam transformar seus projetos em casas que traduzam seu estilo, patrimônio e forma de viver.
+          <p className="muted mt-6 text-lg leading-8">
+  A Corddiali é uma construtora especializada na construção de residências de alto padrão, para clientes que buscam transformar seus projetos em casas que traduzam seu estilo, patrimônio e forma de viver.
+</p>
 
-Atuamos principalmente em empreendimentos e bairros planejados de alto padrão, como Viva Park e All Wert Resort, conduzindo cada projeto com planejamento, gestão e execução personalizada.
+<p className="muted mt-7 text-lg leading-8">
+  Atuamos principalmente em empreendimentos e bairros planejados de alto padrão, como Viva Park e All Wert Resort, conduzindo cada projeto com planejamento, gestão e execução personalizada.
+</p>
 
-Nosso trabalho começa muito antes da primeira etapa da obra. A partir do projeto arquitetônico, estruturamos toda a execução: planejamento, compras, fornecedores, cronograma, compatibilização, acompanhamento e controle de cada etapa.
+<p className="muted mt-7 text-lg leading-8">
+  Nosso trabalho começa muito antes da primeira etapa da obra. A partir do projeto arquitetônico, estruturamos toda a execução: planejamento, compras, fornecedores, cronograma, compatibilização, acompanhamento e controle de cada etapa.
+</p>
 
-Tudo isso dentro do nosso método Turnkey (chaves na mão), com preço fechado.
+<p className="muted mt-7 text-lg leading-8">
+  Tudo isso dentro do nosso método Turnkey (chaves na mão), com preço fechado.
+</p>
 
-Na prática, significa ter uma única equipe responsável por conduzir a construção do início à entrega, reduzindo a complexidade para o cliente e trazendo mais previsibilidade para um investimento de alto valor.
+<p className="muted mt-7 text-lg leading-8">
+  Na prática, significa ter uma única equipe responsável por conduzir a construção do início à entrega, reduzindo a complexidade para o cliente e trazendo mais previsibilidade para um investimento de alto valor.
+</p>
 
-Hoje, nossa experiência reúne obras entregues e projetos residenciais em andamento, consolidando a Corddiali em um mercado onde qualidade construtiva precisa caminhar junto com gestão, confiança e atenção aos detalhes.
-            </p>
-            <p className="mt-4 text-lg">
-             Você idealiza a casa. <span className="text-copper"> A Corddiali assume a responsabilidade porconstruí-la.</span>
+<p className="muted mt-7 text-lg leading-8">
+  Hoje, nossa experiência reúne obras entregues e projetos residenciais em andamento, consolidando a Corddiali em um mercado onde qualidade construtiva precisa caminhar junto com gestão, confiança e atenção aos detalhes.
+</p>
+
+<p className="mt-10 text-xl leading-8">
+  Você idealiza a casa.{" "}
+  <span className="text-copper">
+    A Corddiali assume a responsabilidade por construí-la.
+  </span>
+</p>
             </p>
           </Reveal>
           <Reveal delay={0.1}>
