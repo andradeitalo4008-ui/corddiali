@@ -194,3 +194,28 @@ gallery: [
     ],
   },
 ];
+{
+  slug: "casacor-floripa",
+  title: "CasaCor Floripa",
+  category: "Interiores & Execução",
+  location: "Florianópolis / SC",
+
+  image: "/images/projetos/casacor-floripa/CASA COR - JANTAR.jpeg",
+
+  gallery: [
+    "/images/projetos/casacor-floripa/CASA COR LATERAL JANTAR.jpeg",
+    "/images/projetos/casacor-floripa/CASA COR- BAR.jpeg",
+    "/images/projetos/casacor-floripa/CASA COR- LEITURA.jpeg",
+    "/images/projetos/casacor-floripa/CASA COR- LUIZA E GUILHERME.jpeg",
+  ],
+
+  description:
+    "Projeto executado para a CasaCor Florianópolis, com foco em acabamento, integração dos ambientes e excelência na execução.",
+
+  highlights: [
+    "CasaCor Florianópolis",
+    "Execução de interiores",
+    "Acabamentos de alto padrão",
+    "Detalhamento e precisão",
+  ],
+},
