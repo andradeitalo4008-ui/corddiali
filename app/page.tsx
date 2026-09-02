@@ -139,7 +139,7 @@ export default function Home() {
     </Reveal>
 
    <Reveal delay={0.1}>
-  <div className="flex justify-center md:justify-start md:pt-48 md:-ml-6">
+  <div className="flex justify-center md:justify-start md:pt-72 md:-ml-6">
     <img
       src="/images/imagen-ceos.JPEG"
       className="w-full max-w-[400px] h-auto object-cover"
