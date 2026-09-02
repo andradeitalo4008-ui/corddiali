@@ -200,15 +200,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative min-h-[82vh] grid place-items-center overflow-hidden">
-        <img src="/images/impacto.svg" className="absolute inset-0 h-full w-full object-cover" alt="Arquitetura de alto padrão" />
-        <div className="absolute inset-0 bg-black/55" />
-        <div className="container-x relative z-10 text-center">
-          <h2 className="display text-4xl md:text-7xl max-w-4xl mx-auto">Sua única tarefa é imaginar como quer viver.</h2>
-          <p className="mt-5 text-xl text-white/75">Da execução, nós cuidamos.</p>
-        </div>
-      </section>
+    <section className="relative min-h-[82vh] grid place-items-center overflow-hidden">
+  <img
+    src="/images/fundo-golfe.jpeg"
+    className="absolute inset-0 h-full w-full object-cover"
+    alt="Campo de golfe em cenário paradisíaco"
+  />
 
+  <div className="absolute inset-0 bg-black/10" />
+
+  <div className="container-x relative z-10 text-center">
+    <h2 className="display text-4xl md:text-7xl max-w-4xl mx-auto">
+      Sua única tarefa é imaginar como quer viver.
+    </h2>
+
+    <p className="mt-5 text-xl text-white/75">
+      Da execução, nós cuidamos.
+    </p>
+  </div>
+</section>
       <section className="section">
         <div className="container-x">
           <div className="flex items-end justify-between gap-6">
