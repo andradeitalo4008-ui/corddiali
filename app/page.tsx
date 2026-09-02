@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main
   className="bg-cover bg-center bg-fixed"
-  style={{ backgroundImage: "url('/images/fundo-estrelado.jpeg')" }}
+  style={{ backgroundImage: "url('/images/fundo-marmore-corddiali.jpeg')" }}
 >
       <Header />
 
