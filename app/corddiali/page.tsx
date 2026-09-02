@@ -14,7 +14,7 @@ export default function Empresa() {
   className="section pt-36 overflow-hidden bg-cover bg-center bg-no-repeat"
  style={{
   backgroundImage: "url('/images/fundo-marmore-corddiali.jpeg')",
-  backgroundSize: "cover",
+  backgroundSize: "100% auto",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
 }}
