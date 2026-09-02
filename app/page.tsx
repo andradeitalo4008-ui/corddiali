@@ -352,13 +352,22 @@ export default function Home() {
     </div>
   </div>
 </section>
-      <section className="section bg-[#0f0f0f]">
-        <div className="container-x">
-          <div className="eyebrow">Processo Corddiali</div>
-          <h2 className="display text-4xl md:text-6xl mt-3">Um caminho claro, do início à entrega.</h2>
-          <Timeline />
-        </div>
-      </section>
+  <section
+  className="section relative overflow-hidden bg-cover bg-center bg-no-repeat"
+  style={{ backgroundImage: "url('/images/fundo-processo-corddiali.jpeg')" }}
+>
+  <div className="absolute inset-0 bg-black/10" />
+
+  <div className="container-x relative z-10">
+    <div className="eyebrow">Processo Corddiali</div>
+
+    <h2 className="display text-4xl md:text-6xl mt-3">
+      Um caminho claro, do início à entrega.
+    </h2>
+
+    <Timeline />
+  </div>
+</section>
 
       <section className="section">
         <div className="container-x">
