@@ -10,7 +10,12 @@ export default function Contato() {
     <main>
       <Header />
 
-      <section className="section pt-36">
+     <section
+  className="section pt-36 bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: "url('/images/fundo-contato.png')",
+  }}
+>
         <div className="container-x max-w-5xl">
           <div className="eyebrow">Contato</div>
 
