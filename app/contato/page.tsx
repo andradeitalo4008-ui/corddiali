@@ -13,7 +13,7 @@ export default function Contato() {
      <section
   className="section pt-36 bg-cover bg-center bg-no-repeat"
   style={{
-    backgroundImage: "url('/images/fundo-contato.png')",
+    backgroundImage: "url('/images/fundo-contato.jpeg')",
   }}
 >
         <div className="container-x max-w-5xl">
