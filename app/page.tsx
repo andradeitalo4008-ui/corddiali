@@ -377,7 +377,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section bg-[#0f0f0f]">
+     <section
+  className="section bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: "url('/images/fundo-verde-corddiali.jpeg')",
+  }}
+>
         <div className="container-x grid md:grid-cols-2 gap-14 items-center">
       <img src="/images/excelencia-tecnica-corddiali.jpeg" alt="Execução técnica Corddiali" className="min-h-[520px] object-cover" />
           <div>
