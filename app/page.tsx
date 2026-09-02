@@ -7,7 +7,6 @@ import Comparison from "@/components/Comparison";
 import { projects } from "@/data/projects";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-
 export default function Home() {
   return (
     <main>
