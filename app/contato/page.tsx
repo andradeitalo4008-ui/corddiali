@@ -19,7 +19,7 @@ export default function Contato() {
             <a className="border border-white/10 p-8 hover:border-copper transition" href="https://wa.me/5549991360745">
               <div className="eyebrow">WhatsApp</div>
               <div className="text-2xl mt-4">Iniciar conversa</div>
-              <p className="muted mt-3">Substitua pelo número oficial da Corddiali.</p>
+              <p className="muted mt-3">(49)99136-0745.</p>
             </a>
 
             <div className="border border-white/10 p-8">
