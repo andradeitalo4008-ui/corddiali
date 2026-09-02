@@ -413,7 +413,7 @@ export default function Home() {
 
         <section className="relative min-h-[72vh] grid place-items-center overflow-hidden">
   <img
-    src="/fundo-projeto.jpeg"
+    src="/images/fundo-projeto.jpeg"
     className="absolute inset-0 h-full w-full object-cover"
     alt="Projeto arquitetônico Corddiali"
   />
