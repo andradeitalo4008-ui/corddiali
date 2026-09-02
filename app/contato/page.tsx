@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 
 export const metadata = { title: "Contato" };
 
-export default function Contato() {
+  export default function Contato() {
   return (
     <main>
       <Header />
