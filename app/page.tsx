@@ -142,7 +142,7 @@ export default function Home() {
   <div className="flex justify-center md:justify-start md:pt-60 md:-ml+24">
     <img
       src="/images/imagen-ceos.JPEG"
-      className="w-full max-w-[400px] h-auto object-cover"
+      className="w-full max-w-[480px] h-auto object-cover"
       alt="Guilherme De Carli e Luisa Corrêa — Corddiali"
     />
   </div>
