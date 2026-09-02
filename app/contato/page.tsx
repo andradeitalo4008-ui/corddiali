@@ -2,63 +2,82 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Contato",
+  title: "Corddiali",
 };
 
-export default function Contato() {
+export default function Empresa() {
   return (
     <main>
       <Header />
 
-     <section
-  className="section pt-36 bg-cover bg-center bg-no-repeat"
-  style={{
-    backgroundImage: "url('/images/fundo-contato.jpeg')",
-  }}
->
-        <div className="container-x max-w-5xl">
-          <div className="eyebrow">Contato</div>
+      <section className="section pt-36 overflow-hidden">
+        <div className="container-x">
 
-          <h1 className="display text-5xl md:text-7xl mt-4">
-            Vamos tirar o seu projeto do papel?
-          </h1>
+          {/* Introdução */}
+          <div className="max-w-5xl">
+            <div className="eyebrow">Corddiali</div>
 
-          <p className="muted text-lg leading-8 max-w-3xl mt-6">
-            Agende uma conversa consultiva presencial ou online para uma
-            avaliação inicial do seu projeto ou terreno.
-          </p>
+            <h1 className="display text-5xl md:text-6xl lg:text-7xl mt-4 leading-[0.95]">
+              Engenharia, tradição e responsabilidade integral.
+            </h1>
 
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
-            <a
-              href="https://wa.me/5549991360745"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-white/10 p-8 hover:border-copper transition"
-            >
-              <div className="eyebrow">WhatsApp</div>
-              <div className="text-2xl mt-4">Iniciar conversa</div>
-              <p className="muted mt-3">(49) 99136-0745</p>
-            </a>
+            <p className="muted text-lg leading-8 max-w-3xl mt-7">
+              A Corddiali combina experiência executiva, governança e
+              relacionamento para conduzir projetos de alto padrão com
+              previsibilidade e controle.
+            </p>
+          </div>
 
-            <div className="border border-white/10 p-8">
-              <div className="eyebrow">Atendimento</div>
-              <div className="text-2xl mt-4">Costa Esmeralda</div>
-              <p className="muted mt-3">
-                Itapema • Porto Belo • Balneário Camboriú
+          {/* Guilherme */}
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center mt-20">
+            <div className="overflow-hidden">
+              <img
+                src="/images/foto-guilherme.jpeg"
+                alt="Eng. Guilherme De Carli"
+                className="w-full h-[480px] md:h-[580px] object-cover"
+              />
+            </div>
+
+            <div className="md:pl-6">
+              <div className="eyebrow">Eng. Guilherme De Carli</div>
+
+              <h2 className="display text-3xl md:text-5xl mt-4">
+                Sócio & Diretor Técnico — UDESC
+              </h2>
+
+              <p className="muted mt-6 leading-8">
+                16 anos de bagagem na construção civil executiva, experiência
+                em obras residenciais, comerciais e industriais, com atuação
+                em projetos de grande porte e na Costa Esmeralda.
+              </p>
+            </div>
+          </div>
+
+          {/* Luisa */}
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center mt-24">
+            <div className="md:pr-6 order-2 md:order-1">
+              <div className="eyebrow">Luisa Corrêa</div>
+
+              <h2 className="display text-3xl md:text-5xl mt-4">
+                Gestão Executiva e Comercial
+              </h2>
+
+              <p className="muted mt-6 leading-8">
+                Tradição familiar no mercado imobiliário de Santa Catarina
+                desde 1998, com foco em relacionamento, governança e
+                transparência.
               </p>
             </div>
 
-            <a
-              href="https://www.instagram.com/corddiali/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-white/10 p-8 hover:border-copper transition"
-            >
-              <div className="eyebrow">Instagram</div>
-              <div className="text-2xl mt-4">Acompanhe a Corddiali</div>
-              <p className="muted mt-3">@corddiali</p>
-            </a>
+            <div className="overflow-hidden order-1 md:order-2">
+              <img
+                src="/images/foto-luiza.jpeg"
+                alt="Luisa Corrêa"
+                className="w-full h-[480px] md:h-[580px] object-cover"
+              />
+            </div>
           </div>
+
         </div>
       </section>
 
