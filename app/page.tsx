@@ -175,7 +175,7 @@ export default function Home() {
 
      <section
   className="section relative overflow-hidden bg-cover bg-center bg-no-repeat"
-  style={{ backgroundImage: "url('/images/fundo-turnkey.png')" }}
+  style={{ backgroundImage: "url('/images/fundo-turnkey.jpeg')" }}
 >
         <div className="container-x">
           <div className="eyebrow">O Método Corddiali</div>
