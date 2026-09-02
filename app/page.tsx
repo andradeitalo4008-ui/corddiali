@@ -173,7 +173,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section bg-[#0f0f0f] soft-noise">
+     <section
+  className="section relative overflow-hidden bg-cover bg-center bg-no-repeat"
+  style={{ backgroundImage: "url('/images/fundo-turnkey.png')" }}
+>
         <div className="container-x">
           <div className="eyebrow">O Método Corddiali</div>
           <h2 className="display text-5xl md:text-7xl mt-4">Turnkey.<br />Do projeto às chaves.</h2>
