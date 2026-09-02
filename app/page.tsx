@@ -411,10 +411,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative min-h-[72vh] grid place-items-center overflow-hidden">
-        <img src="/images/hero.svg" className="absolute inset-0 h-full w-full object-cover" alt="Projeto Corddiali" />
-        <div className="absolute inset-0 bg-black/72" />
-        <div className="container-x relative z-10 text-center">
+        <section className="relative min-h-[72vh] grid place-items-center overflow-hidden">
+  <img
+    src="/fundo-projeto.jpeg"
+    className="absolute inset-0 h-full w-full object-cover"
+    alt="Projeto arquitetônico Corddiali"
+  />
+
+  <div className="container-x relative z-10 text-center">
           <div className="eyebrow">Próximo passo</div>
           <h2 className="display text-4xl md:text-7xl mt-4">Seu projeto merece começar com previsibilidade.</h2>
           <p className="muted mt-5">Converse diretamente com a Corddiali para uma avaliação inicial do seu projeto ou terreno.</p>
