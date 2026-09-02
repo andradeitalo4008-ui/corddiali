@@ -42,7 +42,13 @@ export default function Metodo() {
       </section>
 
       <section className="section bg-[#0f0f0f]">
-        <div className="container-x"><div className="eyebrow">Processo</div><Timeline /></div>
+       <section
+  className="section bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage:
+      "linear-gradient(rgba(5, 10, 20, 0.55), rgba(5, 10, 20, 0.65)), url('/images/fundo-processo-corddiali.jpeg')",
+  }}
+>
       </section>
 
       <section className="section">
