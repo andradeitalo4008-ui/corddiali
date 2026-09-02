@@ -16,7 +16,7 @@ export default function Contato() {
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 mt-12">
-            <a className="border border-white/10 p-8 hover:border-copper transition" href="https://wa.me/" target="_blank">
+            <a className="border border-white/10 p-8 hover:border-copper transition" href="https://wa.me/5549991360745">
               <div className="eyebrow">WhatsApp</div>
               <div className="text-2xl mt-4">Iniciar conversa</div>
               <p className="muted mt-3">Substitua pelo número oficial da Corddiali.</p>
