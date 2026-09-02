@@ -148,7 +148,10 @@ export default function Home() {
   </div>
 </Reveal>
 
-      <section className="section pt-0">
+</div>
+</section>
+
+<section className="section pt-0">
         <div className="container-x">
           <div className="eyebrow">O desafio</div>
           <h2 className="display text-4xl md:text-6xl mt-4 max-w-4xl">O modelo tradicional transfere o risco da obra para o proprietário.</h2>
