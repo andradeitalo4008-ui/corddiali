@@ -9,7 +9,10 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 export default function Home() {
   return (
-    <main>
+    <main
+  className="bg-cover bg-center bg-fixed"
+  style={{ backgroundImage: "url('/images/fundo-estrelado.jpeg')" }}
+>
       <Header />
 
     <section className="relative min-h-screen flex items-end overflow-hidden">
