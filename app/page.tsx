@@ -202,7 +202,7 @@ export default function Home() {
 
     <section className="relative min-h-[82vh] grid place-items-center overflow-hidden">
   <img
-    src="/images/fundo-golfe.jpeg"
+    src="/fundo-golfe.jpeg"
     className="absolute inset-0 h-full w-full object-cover"
     alt="Campo de golfe em cenário paradisíaco"
   />
