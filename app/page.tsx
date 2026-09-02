@@ -137,9 +137,13 @@ export default function Home() {
       </div>
     </Reveal>
             
-          <Reveal delay={0.1}>
-            <img src="/images/manifesto.svg" className="min-h-[520px] object-cover" alt="Arquitetura contemporânea Corddiali" />
-          </Reveal>
+           <Reveal delay={0.1}>
+  <img
+    src="/images/imagen-ceos.JPEG"
+    className="w-full min-h-[520px] h-full object-cover"
+    alt="Guilherme De Carli e Luisa Corrêa — Corddiali"
+  />
+</Reveal>
         </div>
       </section>
 
