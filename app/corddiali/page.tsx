@@ -12,10 +12,12 @@ export default function Empresa() {
 
      <section
   className="section pt-36 overflow-hidden bg-cover bg-center bg-no-repeat"
-  style={{
-    backgroundImage:
-      "linear-gradient(rgba(5, 10, 20, 0.78), rgba(5, 10, 20, 0.88)), url('/images/fundo-projeto.jpeg')",
-  }}
+ style={{
+  backgroundImage: "url('/images/fundo-projeto.jpeg')",
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+}}
 >
         <div className="container-x">
 
