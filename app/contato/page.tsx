@@ -32,7 +32,7 @@ export default function Empresa() {
           <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center mt-20">
             <div className="overflow-hidden">
               <img
-                src="/images/foto-guilherme.jpeg"
+                src="/images/foto-guilherme.png"
                 alt="Eng. Guilherme De Carli"
                 className="w-full h-[480px] md:h-[580px] object-cover"
               />
@@ -71,7 +71,7 @@ export default function Empresa() {
 
             <div className="overflow-hidden order-1 md:order-2">
               <img
-                src="/images/foto-luiza.jpeg"
+                src="/images/foto-luiza.png"
                 alt="Luisa Corrêa"
                 className="w-full h-[480px] md:h-[580px] object-cover"
               />
