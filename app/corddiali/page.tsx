@@ -10,7 +10,13 @@ export default function Empresa() {
     <main>
       <Header />
 
-      <section className="section pt-36 overflow-hidden">
+     <section
+  className="section pt-36 overflow-hidden bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage:
+      "linear-gradient(rgba(5, 10, 20, 0.78), rgba(5, 10, 20, 0.88)), url('/images/fundo-marmore-corddiali.jpeg')",
+  }}
+>
         <div className="container-x">
 
           {/* Introdução */}
