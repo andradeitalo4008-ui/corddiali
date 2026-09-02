@@ -82,7 +82,8 @@ export default function Home() {
 </section>
 
      <section className="section">
-  <div className="container-x">
+  <div className="container-x grid md:grid-cols-2 gap-12 md:gap-16 items-start">
+    
     <Reveal>
       <div className="eyebrow">Corddiali</div>
 
@@ -136,16 +137,19 @@ export default function Home() {
         </p>
       </div>
     </Reveal>
-            
-           <Reveal delay={0.1}>
-  <img
-    src="/images/imagen-ceos.JPEG"
-    className="w-full min-h-[520px] h-full object-cover"
-    alt="Guilherme De Carli e Luisa Corrêa — Corddiali"
-  />
-</Reveal>
-        </div>
-      </section>
+
+    <Reveal delay={0.1}>
+      <div className="flex justify-center md:justify-end md:pt-16">
+        <img
+          src="/images/imagen-ceos.JPEG"
+          className="w-full max-w-[400px] h-auto object-cover"
+          alt="Guilherme De Carli e Luisa Corrêa — Corddiali"
+        />
+      </div>
+    </Reveal>
+
+  </div>
+</section>
 
       <section className="section pt-0">
         <div className="container-x">
