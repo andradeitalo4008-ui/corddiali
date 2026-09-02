@@ -210,7 +210,7 @@ export default function Home() {
     alt="Campo de golfe em cenário paradisíaco"
   />
 
-  <div className="absolute inset-0 bg-black/10" />
+  <div className="absolute inset-0 bg-black/35" />
 
   <div className="container-x relative z-10 text-center">
     <h2 className="display text-4xl md:text-7xl max-w-4xl mx-auto">
