@@ -138,18 +138,15 @@ export default function Home() {
       </div>
     </Reveal>
 
-    <Reveal delay={0.1}>
-      <div className="flex justify-center md:justify-end md:pt-16">
-        <img
-          src="/images/imagen-ceos.JPEG"
-          className="w-full max-w-[400px] h-auto object-cover"
-          alt="Guilherme De Carli e Luisa Corrêa — Corddiali"
-        />
-      </div>
-    </Reveal>
-
+   <Reveal delay={0.1}>
+  <div className="flex justify-center md:justify-start md:pt-0 md:-ml-6">
+    <img
+      src="/images/imagen-ceos.JPEG"
+      className="w-full max-w-[400px] h-auto object-cover"
+      alt="Guilherme De Carli e Luisa Corrêa — Corddiali"
+    />
   </div>
-</section>
+</Reveal>
 
       <section className="section pt-0">
         <div className="container-x">
