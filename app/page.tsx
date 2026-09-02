@@ -379,7 +379,7 @@ export default function Home() {
 
       <section className="section bg-[#0f0f0f]">
         <div className="container-x grid md:grid-cols-2 gap-14 items-center">
-      <img src="/images/excelencia-tecnica-corddiali.jpg" alt="Execução técnica Corddiali" className="min-h-[520px] object-cover" />
+      <img src="/images/excelencia-tecnica-corddiali.jpeg" alt="Execução técnica Corddiali" className="min-h-[520px] object-cover" />
           <div>
             <div className="eyebrow">Excelência técnica</div>
             <h2 className="display text-4xl md:text-6xl mt-4">O padrão está nos bastidores.</h2>
