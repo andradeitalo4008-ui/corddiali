@@ -7,7 +7,6 @@ import Comparison from "@/components/Comparison";
 import { projects } from "@/data/projects";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-
 export default function Home() {
   return (
     <main>
@@ -137,8 +136,6 @@ export default function Home() {
         </p>
       </div>
     </Reveal>
-  </div>
-</section>
             
           <Reveal delay={0.1}>
             <img src="/images/manifesto.svg" className="min-h-[520px] object-cover" alt="Arquitetura contemporânea Corddiali" />
