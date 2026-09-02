@@ -9,7 +9,15 @@ export default function Metodo() {
   return (
     <main>
       <Header />
-      <section className="section pt-36">
+     <section
+  className="section pt-36"
+  style={{
+    backgroundImage: "url('/images/fundo-turnkey.jpeg')",
+    backgroundSize: "100% auto",
+    backgroundPosition: "center top",
+    backgroundRepeat: "repeat-y",
+  }}
+>
         <div className="container-x">
           <div className="eyebrow">Método Corddiali</div>
           <h1 className="display text-5xl md:text-7xl mt-4">Turnkey. Do projeto às chaves.</h1>
