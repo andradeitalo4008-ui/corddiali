@@ -60,7 +60,7 @@ export default function Home() {
             className="inline-flex items-center gap-4 border border-[#c7a46a] px-6 py-4 text-[11px] uppercase tracking-[0.14em] text-white transition hover:bg-[#c7a46a]/10"
             href="/projetos"
           >
-            Conheça nossos projetos
+            Conheça nossas Obras 
             <ArrowRight size={15} />
           </Link>
 
