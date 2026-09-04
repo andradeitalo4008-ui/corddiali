@@ -26,7 +26,7 @@ export default function Header() {
 </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-[10px] uppercase tracking-[.14em] text-white/78">
-          <Link href="/projetos">Projetos</Link>
+         <Link href="/projetos">Obras</Link>
           <Link href="/metodo">Método</Link>
           <Link href="/corddiali">Corddiali</Link>
           <Link href="/contato">Contato</Link>
