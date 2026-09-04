@@ -136,7 +136,7 @@ gallery: [
       "Apartamentos de 120 m²",
       "Penthouse de 240 m²",
     ],
-
+},
 {
   slug: "casacor-floripa",
   title: "CasaCor Floripa",
