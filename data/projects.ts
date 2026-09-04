@@ -136,63 +136,7 @@ gallery: [
       "Apartamentos de 120 m²",
       "Penthouse de 240 m²",
     ],
-  },
 
-  {
-    slug: "bethania",
-    title: "Bethânia Residence",
-    category: "Residencial Contemporâneo",
-    location: "Lages / SC",
-    area: "+300 m²",
-    image: "/images/projetos/bethania/bethania-01.webp",
-    gallery: [],
-    description:
-      "Casa com mais de 300 m² distribuídos em três andares, com linguagem contemporânea e execução de alto padrão em Lages, na Serra Catarinense.",
-    highlights: [
-      "Mais de 300 m²",
-      "03 andares",
-      "Estilo contemporâneo",
-      "Lages / SC",
-    ],
-  },
-
-  {
-    slug: "jardim-panoramico",
-    title: "Jardim Panorâmico",
-    category: "Residencial Contemporâneo",
-    location: "Lages / SC",
-    area: "312 m²",
-    image:
-      "/images/projetos/jardim-panoramico/jardim-panoramico-01.webp",
-    gallery: [],
-    description:
-      "Casa com 312 m² executada na cidade de Lages, na Serra Catarinense, com foco em qualidade construtiva e arquitetura residencial contemporânea.",
-    highlights: [
-      "312 m²",
-      "Lages / SC",
-      "Serra Catarinense",
-      "Residencial contemporâneo",
-    ],
-  },
-
-  {
-    slug: "arezzo",
-    title: "Lojas Arezzo",
-    category: "Varejo Premium",
-    location: "Santa Catarina",
-    image: "/images/projetos/arezzo/arezzo-01.webp",
-    gallery: [
-      "/images/projetos/arezzo/arezzo-02.webp",
-    ],
-    description:
-      "Instalação de lojas Arezzo em Santa Catarina, com execução alinhada ao padrão de identidade, acabamento e experiência da marca.",
-    highlights: [
-      "Instalação de lojas",
-      "Santa Catarina",
-      "Padronização de marca",
-      "Varejo premium",
-    ],
-  },
 {
   slug: "casacor-floripa",
   title: "CasaCor Floripa",
