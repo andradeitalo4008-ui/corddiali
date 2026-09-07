@@ -14,7 +14,7 @@ export default function Metodo() {
 
       {/* HERO — TURNKEY */}
       <section
-        className="section pt-36"
+     className="section pt-36 relative overflow-hidden"
         style={{
           backgroundImage: "url('/images/fundo-turnkey.jpeg')",
           backgroundSize: "100% auto",
@@ -69,6 +69,7 @@ export default function Metodo() {
             ))}
           </div>
         </div>
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent via-[#07101d]/60 to-[#07101d]" />
       </section>
 
     {/* ESCOPO INCLUSO */}
