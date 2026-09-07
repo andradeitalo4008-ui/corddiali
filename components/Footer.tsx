@@ -5,9 +5,13 @@ export default function Footer() {
     <footer className="border-t border-white/10 py-10">
       <div className="container-x grid md:grid-cols-[1fr_auto_auto] gap-8 items-center">
         <div>
-          <div className="tracking-[.28em] text-sm">CORDDIALI</div>
-          <div className="text-[10px] mt-2 text-white/40">Construções Personalizadas</div>
-        </div>
+      <div className="flex items-center">
+  <img
+    src="/images/corddiali_logo_transparente.png"
+    alt="Corddiali Construções Personalizadas"
+    className="h-16 md:h-20 w-auto object-contain"
+  />
+</div>
 
         <div className="flex flex-wrap gap-5 text-[10px] uppercase tracking-[.12em] text-white/55">
           <Link href="/projetos">Projetos</Link>
