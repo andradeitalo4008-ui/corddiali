@@ -14,7 +14,7 @@ export default function Metodo() {
 
       {/* HERO — TURNKEY */}
       <section
-     className="section pt-36 relative overflow-hidden"
+        className="section pt-36 relative overflow-hidden"
         style={{
           backgroundImage: "url('/images/fundo-turnkey.jpeg')",
           backgroundSize: "100% auto",
@@ -22,7 +22,7 @@ export default function Metodo() {
           backgroundRepeat: "repeat-y",
         }}
       >
-        <div className="container-x">
+        <div className="container-x relative z-10">
           <div className="eyebrow">Método Corddiali</div>
 
           <h1 className="display text-5xl md:text-7xl mt-4 max-w-5xl">
@@ -69,77 +69,84 @@ export default function Metodo() {
             ))}
           </div>
         </div>
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent via-[#07101d]/60 to-[#07101d]" />
+
+        {/* TRANSIÇÃO PARA ESCOPO */}
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-b from-transparent via-[#07101d]/80 to-[#07101d]" />
       </section>
 
-    {/* ESCOPO INCLUSO */}
-<section
-  className="section relative overflow-hidden"
-  style={{
-    backgroundImage:
-      "linear-gradient(rgba(4, 10, 20, 0.72), rgba(4, 10, 20, 0.84)), url('/images/fundo-escopo.png')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-  }}
->
-  <div className="container-x relative z-10">
 
-    <div className="eyebrow">Escopo de execução</div>
+      {/* ESCOPO INCLUSO */}
+      <section
+        className="section relative overflow-hidden"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(4, 10, 20, 0.72), rgba(4, 10, 20, 0.84)), url('/images/fundo-escopo.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        {/* ENTRADA SUAVE */}
+        <div className="pointer-events-none absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-[#07101d] via-[#07101d]/80 to-transparent" />
 
-    <h2 className="display text-4xl md:text-6xl mt-4 max-w-4xl">
-      O que a Corddiali assume na sua obra.
-    </h2>
+        <div className="container-x relative z-10">
+          <div className="eyebrow">Escopo de execução</div>
 
-    <p className="muted max-w-3xl text-lg leading-8 mt-6">
-      Da preparação da obra aos últimos detalhes da execução,
-      centralizamos engenharia, planejamento e gestão para conduzir
-      cada etapa da construção.
-    </p>
+          <h2 className="display text-4xl md:text-6xl mt-4 max-w-4xl">
+            O que a Corddiali assume na sua obra.
+          </h2>
 
-    <div className="grid md:grid-cols-2 gap-6 mt-14">
+          <p className="muted max-w-3xl text-lg leading-8 mt-6">
+            Da preparação da obra aos últimos detalhes da execução,
+            centralizamos engenharia, planejamento e gestão para conduzir
+            cada etapa da construção.
+          </p>
 
-      <div className="border border-white/10 bg-black/20 backdrop-blur-sm p-8">
-        <span className="text-copper text-xs tracking-[.2em]">01</span>
-        <h3 className="text-xl mt-4">Preparação</h3>
-        <p className="muted mt-4 leading-7">
-          Projetos executivos • Aprovações junto aos órgãos competentes •
-          Serviços iniciais • Instalações provisórias
-        </p>
-      </div>
+          <div className="grid md:grid-cols-2 gap-6 mt-14">
+            <div className="border border-white/10 bg-black/20 backdrop-blur-sm p-8">
+              <span className="text-copper text-xs tracking-[.2em]">01</span>
+              <h3 className="text-xl mt-4">Preparação</h3>
+              <p className="muted mt-4 leading-7">
+                Projetos executivos • Aprovações junto aos órgãos competentes •
+                Serviços iniciais • Instalações provisórias
+              </p>
+            </div>
 
-      <div className="border border-white/10 bg-black/20 backdrop-blur-sm p-8">
-        <span className="text-copper text-xs tracking-[.2em]">02</span>
-        <h3 className="text-xl mt-4">Estrutura</h3>
-        <p className="muted mt-4 leading-7">
-          Fundação • Estrutura • Etapa civil cinza • Impermeabilizações •
-          Telhados
-        </p>
-      </div>
+            <div className="border border-white/10 bg-black/20 backdrop-blur-sm p-8">
+              <span className="text-copper text-xs tracking-[.2em]">02</span>
+              <h3 className="text-xl mt-4">Estrutura</h3>
+              <p className="muted mt-4 leading-7">
+                Fundação • Estrutura • Etapa civil cinza • Impermeabilizações •
+                Telhados
+              </p>
+            </div>
 
-      <div className="border border-white/10 bg-black/20 backdrop-blur-sm p-8">
-        <span className="text-copper text-xs tracking-[.2em]">03</span>
-        <h3 className="text-xl mt-4">Infraestrutura</h3>
-        <p className="muted mt-4 leading-7">
-          Elétrica • Hidrossanitária • Climatização • Comunicação •
-          Automação • Gás
-        </p>
-      </div>
+            <div className="border border-white/10 bg-black/20 backdrop-blur-sm p-8">
+              <span className="text-copper text-xs tracking-[.2em]">03</span>
+              <h3 className="text-xl mt-4">Infraestrutura</h3>
+              <p className="muted mt-4 leading-7">
+                Elétrica • Hidrossanitária • Climatização • Comunicação •
+                Automação • Gás
+              </p>
+            </div>
 
-      <div className="border border-white/10 bg-black/20 backdrop-blur-sm p-8">
-        <span className="text-copper text-xs tracking-[.2em]">04</span>
-        <h3 className="text-xl mt-4">Finalização</h3>
-        <p className="muted mt-4 leading-7">
-          Forros • Acompanhamento de esquadrias e portas • Revestimentos •
-          Rodapés • Vasos e metais • Pintura • Limpeza final
-        </p>
-      </div>
+            <div className="border border-white/10 bg-black/20 backdrop-blur-sm p-8">
+              <span className="text-copper text-xs tracking-[.2em]">04</span>
+              <h3 className="text-xl mt-4">Finalização</h3>
+              <p className="muted mt-4 leading-7">
+                Forros • Acompanhamento de esquadrias e portas • Revestimentos •
+                Rodapés • Vasos e metais • Pintura • Limpeza final
+              </p>
+            </div>
+          </div>
+        </div>
 
-    </div>
-  </div>
-</section>
+        {/* TRANSIÇÃO PARA PERSONALIZAÇÃO */}
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-b from-transparent via-[#07101d]/80 to-[#07101d]" />
+      </section>
 
-          {/* PERSONALIZAÇÃO */}
+
+      {/* PERSONALIZAÇÃO */}
       <section
         className="section relative overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{
@@ -147,8 +154,8 @@ export default function Metodo() {
             "linear-gradient(rgba(5,10,20,0.48), rgba(5,10,20,0.58)), url('/images/metodo-personalizacao.png')",
         }}
       >
-        {/* entrada suave */}
-        <div className="pointer-events-none absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-[#07101d] via-[#07101d]/60 to-transparent" />
+        {/* ENTRADA SUAVE */}
+        <div className="pointer-events-none absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-[#07101d] via-[#07101d]/80 to-transparent" />
 
         <div className="container-x relative z-10">
           <div className="eyebrow">Personalização</div>
@@ -212,8 +219,8 @@ export default function Metodo() {
           </p>
         </div>
 
-        {/* saída suave para Processo */}
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent via-[#07101d]/60 to-[#07101d]" />
+        {/* TRANSIÇÃO PARA PROCESSO */}
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-b from-transparent via-[#07101d]/75 to-[#07101d]" />
       </section>
 
 
@@ -225,8 +232,8 @@ export default function Metodo() {
             "linear-gradient(rgba(5,10,20,0.48), rgba(5,10,20,0.58)), url('/images/metodo-processo.png')",
         }}
       >
-        {/* entrada suave */}
-        <div className="pointer-events-none absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-[#07101d] via-[#07101d]/55 to-transparent" />
+        {/* ENTRADA SUAVE */}
+        <div className="pointer-events-none absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-[#07101d] via-[#07101d]/75 to-transparent" />
 
         <div className="container-x relative z-10">
           <div className="eyebrow">Processo</div>
@@ -238,65 +245,61 @@ export default function Metodo() {
           <Timeline />
         </div>
 
-        {/* saída suave */}
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent via-[#07101d]/55 to-[#07101d]" />
+        {/* TRANSIÇÃO PARA MODELO */}
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-b from-transparent via-[#07101d]/75 to-[#07101d]" />
       </section>
 
 
-      {/* MODELO DE EXECUÇÃO */}
-      <section
-        className="section relative overflow-hidden bg-cover bg-center bg-no-repeat"
+      {/* MODELO + FECHAMENTO — FUNDO CONTÍNUO */}
+      <div
+        className="relative overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(5,10,20,0.52), rgba(5,10,20,0.60)), url('/images/metodo-modelo-execucao.png')",
+            "linear-gradient(rgba(5,10,20,0.50), rgba(5,10,20,0.58)), url('/images/metodo-modelo-execucao.png')",
         }}
       >
-        {/* entrada suave */}
-        <div className="pointer-events-none absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-[#07101d] via-[#07101d]/55 to-transparent" />
-
-        <div className="container-x relative z-10">
-          <div className="eyebrow">Modelo de execução</div>
-
-          <h2 className="display text-4xl md:text-6xl mt-4 mb-12">
-            Tradicional × Corddiali
-          </h2>
-
-          <Comparison />
-        </div>
-
-        {/* transição para o fechamento */}
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-[#07101d]/70" />
-      </section>
+        {/* ENTRADA SUAVE */}
+        <div className="pointer-events-none absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-[#07101d] via-[#07101d]/75 to-transparent" />
 
 
-      {/* FECHAMENTO */}
-      <section
-        className="section relative overflow-hidden bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(5,10,20,0.42), rgba(5,10,20,0.52)), url('/images/metodo-modelo-execucao.png')",
-        }}
-      >
-        {/* mantém continuidade com a seção anterior */}
-        <div className="pointer-events-none absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-[#07101d]/70 to-transparent" />
+        {/* MODELO DE EXECUÇÃO */}
+        <section className="section relative">
+          <div className="container-x relative z-10">
+            <div className="eyebrow">Modelo de execução</div>
 
-        <div className="container-x relative z-10 text-center py-12 md:py-20">
-          <div className="eyebrow">Corddiali</div>
+            <h2 className="display text-4xl md:text-6xl mt-4 mb-12">
+              Tradicional × Corddiali
+            </h2>
 
-          <h2 className="display text-4xl md:text-6xl mt-4 max-w-4xl mx-auto">
-            Você idealiza a casa.
-            <br />
-            <span className="text-copper">
-              Nós assumimos a responsabilidade por construí-la.
-            </span>
-          </h2>
+            <Comparison />
+          </div>
+        </section>
 
-          <p className="muted max-w-2xl mx-auto mt-7 leading-8">
-            Uma única gestão para transformar projeto, engenharia e execução
-            em uma obra conduzida com planejamento, controle e previsibilidade.
-          </p>
-        </div>
-      </section>
+
+        {/* TRANSIÇÃO INTERNA SUAVE */}
+        <div className="relative h-32 md:h-48 -my-16 z-0 bg-gradient-to-b from-transparent via-[#07101d]/35 to-transparent pointer-events-none" />
+
+
+        {/* FECHAMENTO */}
+        <section className="section relative">
+          <div className="container-x relative z-10 text-center py-12 md:py-20">
+            <div className="eyebrow">Corddiali</div>
+
+            <h2 className="display text-4xl md:text-6xl mt-4 max-w-4xl mx-auto">
+              Você idealiza a casa.
+              <br />
+              <span className="text-copper">
+                Nós assumimos a responsabilidade por construí-la.
+              </span>
+            </h2>
+
+            <p className="muted max-w-2xl mx-auto mt-7 leading-8">
+              Uma única gestão para transformar projeto, engenharia e execução
+              em uma obra conduzida com planejamento, controle e previsibilidade.
+            </p>
+          </div>
+        </section>
+      </div>
 
       <Footer />
     </main>
