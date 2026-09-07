@@ -71,60 +71,72 @@ export default function Metodo() {
         </div>
       </section>
 
-      {/* ESCOPO INCLUSO */}
-      <section className="section">
-        <div className="container-x">
-          <div className="eyebrow">Escopo de execução</div>
+    {/* ESCOPO INCLUSO */}
+<section
+  className="section relative overflow-hidden"
+  style={{
+    backgroundImage:
+      "linear-gradient(rgba(4, 10, 20, 0.72), rgba(4, 10, 20, 0.84)), url('/images/fundo-escopo.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }}
+>
+  <div className="container-x relative z-10">
 
-          <h2 className="display text-4xl md:text-6xl mt-4 max-w-4xl">
-            O que a Corddiali assume na sua obra.
-          </h2>
+    <div className="eyebrow">Escopo de execução</div>
 
-          <p className="muted max-w-3xl text-lg leading-8 mt-6">
-            Nosso escopo contempla as principais etapas técnicas e executivas
-            necessárias para transformar o projeto em uma obra concluída,
-            coordenada e pronta para a etapa final de entrega.
-          </p>
+    <h2 className="display text-4xl md:text-6xl mt-4 max-w-4xl">
+      O que a Corddiali assume na sua obra.
+    </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-14">
-            {[
-              "Projetos executivos",
-              "Aprovação junto aos órgãos competentes",
-              "Serviços iniciais e instalações provisórias",
-              "Fundação",
-              "Estrutura",
-              "Etapa civil cinza",
-              "Impermeabilizações",
-              "Infraestrutura elétrica",
-              "Infraestrutura hidrossanitária",
-              "Infraestrutura de climatização",
-              "Infraestrutura de comunicação",
-              "Infraestrutura de automação",
-              "Infraestrutura de gás",
-              "Forros",
-              "Telhados",
-              "Gerenciamento da instalação de esquadrias e portas",
-              "Gerenciamento de revestimentos e rodapés",
-              "Gerenciamento da instalação de vasos e metais",
-              "Pintura",
-              "Limpeza final da obra",
-            ].map((item, index) => (
-              <div
-                key={item}
-                className="border border-white/10 p-6 flex gap-4"
-              >
-                <span className="text-copper text-xs tracking-widest">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+    <p className="muted max-w-3xl text-lg leading-8 mt-6">
+      Da preparação da obra aos últimos detalhes da execução,
+      centralizamos engenharia, planejamento e gestão para conduzir
+      cada etapa da construção.
+    </p>
 
-                <p className="text-sm leading-6">
-                  {item}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+    <div className="grid md:grid-cols-2 gap-6 mt-14">
+
+      <div className="border border-white/10 bg-black/20 backdrop-blur-sm p-8">
+        <span className="text-copper text-xs tracking-[.2em]">01</span>
+        <h3 className="text-xl mt-4">Preparação</h3>
+        <p className="muted mt-4 leading-7">
+          Projetos executivos • Aprovações junto aos órgãos competentes •
+          Serviços iniciais • Instalações provisórias
+        </p>
+      </div>
+
+      <div className="border border-white/10 bg-black/20 backdrop-blur-sm p-8">
+        <span className="text-copper text-xs tracking-[.2em]">02</span>
+        <h3 className="text-xl mt-4">Estrutura</h3>
+        <p className="muted mt-4 leading-7">
+          Fundação • Estrutura • Etapa civil cinza • Impermeabilizações •
+          Telhados
+        </p>
+      </div>
+
+      <div className="border border-white/10 bg-black/20 backdrop-blur-sm p-8">
+        <span className="text-copper text-xs tracking-[.2em]">03</span>
+        <h3 className="text-xl mt-4">Infraestrutura</h3>
+        <p className="muted mt-4 leading-7">
+          Elétrica • Hidrossanitária • Climatização • Comunicação •
+          Automação • Gás
+        </p>
+      </div>
+
+      <div className="border border-white/10 bg-black/20 backdrop-blur-sm p-8">
+        <span className="text-copper text-xs tracking-[.2em]">04</span>
+        <h3 className="text-xl mt-4">Finalização</h3>
+        <p className="muted mt-4 leading-7">
+          Forros • Acompanhamento de esquadrias e portas • Revestimentos •
+          Rodapés • Vasos e metais • Pintura • Limpeza final
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* RESPONSABILIDADES DO CLIENTE */}
       <section className="section bg-[#0b1119]">
