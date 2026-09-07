@@ -139,7 +139,13 @@ export default function Metodo() {
 </section>
 
       {/* RESPONSABILIDADES DO CLIENTE */}
-      <section className="section bg-[#0b1119]">
+     <section
+  className="section bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage:
+      "linear-gradient(rgba(5,10,20,0.52), rgba(5,10,20,0.62)), url('/images/metodo-personalizacao.png')",
+  }}
+>
         <div className="container-x">
           <div className="eyebrow">Personalização</div>
 
@@ -208,7 +214,7 @@ export default function Metodo() {
         className="section bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(5, 10, 20, 0.55), rgba(5, 10, 20, 0.65)), url('/images/fundo-processo.jpeg')",
+            "linear-gradient(rgba(5, 10, 20, 0.55), rgba(5, 10, 20, 0.65)), url('/images/metodo-processo.png')",
         }}
       >
         <div className="container-x">
@@ -236,7 +242,13 @@ export default function Metodo() {
       </section>
 
       {/* FECHAMENTO */}
-      <section className="section bg-[#080d14]">
+     <section
+  className="section bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage:
+      "linear-gradient(rgba(5, 10, 20, 0.50), rgba(5, 10, 20, 0.60)), url('/images/metodo-modelo-execucao.png')",
+  }}
+>
         <div className="container-x text-center">
           <div className="eyebrow">Corddiali</div>
 
