@@ -4,7 +4,6 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/10 py-10">
       <div className="container-x grid md:grid-cols-[1fr_auto_auto] gap-8 items-center">
-        <div>
       <div className="flex items-center">
   <img
     src="/images/corddiali_logo_transparente.png"
