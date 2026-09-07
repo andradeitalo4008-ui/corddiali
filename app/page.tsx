@@ -297,7 +297,7 @@ export default function Home() {
 
         <div className="mt-8 border border-white/10 p-6 md:p-8 inline-block">
           <div className="text-copper text-3xl md:text-5xl font-semibold">
-            + de 25.000 m²
+            + de 50.000 m²
           </div>
           <div className="text-xs uppercase tracking-[.16em] text-white/60 mt-2">
             de obras gerenciadas
