@@ -138,15 +138,18 @@ export default function Metodo() {
   </div>
 </section>
 
-      {/* RESPONSABILIDADES DO CLIENTE */}
-     <section
-  className="section bg-cover bg-center bg-no-repeat"
-  style={{
-    backgroundImage:
-      "linear-gradient(rgba(5,10,20,0.52), rgba(5,10,20,0.62)), url('/images/metodo-personalizacao.png')",
-  }}
->
-        <div className="container-x">
+          {/* PERSONALIZAÇÃO */}
+      <section
+        className="section relative overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(5,10,20,0.48), rgba(5,10,20,0.58)), url('/images/metodo-personalizacao.png')",
+        }}
+      >
+        {/* entrada suave */}
+        <div className="pointer-events-none absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-[#07101d] via-[#07101d]/60 to-transparent" />
+
+        <div className="container-x relative z-10">
           <div className="eyebrow">Personalização</div>
 
           <h2 className="display text-4xl md:text-6xl mt-4 max-w-4xl">
@@ -188,7 +191,7 @@ export default function Metodo() {
             ].map(([titulo, descricao]) => (
               <div
                 key={titulo}
-                className="border border-white/10 p-7"
+                className="border border-white/10 bg-black/10 backdrop-blur-sm p-7"
               >
                 <h3 className="text-copper uppercase tracking-[.12em] text-xs">
                   {titulo}
@@ -207,17 +210,24 @@ export default function Metodo() {
             sempre que estiverem relacionados ao andamento da obra.
           </p>
         </div>
+
+        {/* saída suave para Processo */}
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent via-[#07101d]/60 to-[#07101d]" />
       </section>
+
 
       {/* PROCESSO */}
       <section
-        className="section bg-cover bg-center bg-no-repeat"
+        className="section relative overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(5, 10, 20, 0.55), rgba(5, 10, 20, 0.65)), url('/images/metodo-processo.png')",
+            "linear-gradient(rgba(5,10,20,0.48), rgba(5,10,20,0.58)), url('/images/metodo-processo.png')",
         }}
       >
-        <div className="container-x">
+        {/* entrada suave */}
+        <div className="pointer-events-none absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-[#07101d] via-[#07101d]/55 to-transparent" />
+
+        <div className="container-x relative z-10">
           <div className="eyebrow">Processo</div>
 
           <h2 className="display text-4xl md:text-6xl mt-4 max-w-4xl mb-14">
@@ -226,11 +236,24 @@ export default function Metodo() {
 
           <Timeline />
         </div>
+
+        {/* saída suave */}
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent via-[#07101d]/55 to-[#07101d]" />
       </section>
 
+
       {/* MODELO DE EXECUÇÃO */}
-      <section className="section">
-        <div className="container-x">
+      <section
+        className="section relative overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(5,10,20,0.52), rgba(5,10,20,0.60)), url('/images/metodo-modelo-execucao.png')",
+        }}
+      >
+        {/* entrada suave */}
+        <div className="pointer-events-none absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-[#07101d] via-[#07101d]/55 to-transparent" />
+
+        <div className="container-x relative z-10">
           <div className="eyebrow">Modelo de execução</div>
 
           <h2 className="display text-4xl md:text-6xl mt-4 mb-12">
@@ -239,17 +262,24 @@ export default function Metodo() {
 
           <Comparison />
         </div>
+
+        {/* transição para o fechamento */}
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-[#07101d]/70" />
       </section>
 
+
       {/* FECHAMENTO */}
-     <section
-  className="section bg-cover bg-center bg-no-repeat"
-  style={{
-    backgroundImage:
-      "linear-gradient(rgba(5, 10, 20, 0.50), rgba(5, 10, 20, 0.60)), url('/images/metodo-modelo-execucao.png')",
-  }}
->
-        <div className="container-x text-center">
+      <section
+        className="section relative overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(5,10,20,0.42), rgba(5,10,20,0.52)), url('/images/metodo-modelo-execucao.png')",
+        }}
+      >
+        {/* mantém continuidade com a seção anterior */}
+        <div className="pointer-events-none absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-[#07101d]/70 to-transparent" />
+
+        <div className="container-x relative z-10 text-center py-12 md:py-20">
           <div className="eyebrow">Corddiali</div>
 
           <h2 className="display text-4xl md:text-6xl mt-4 max-w-4xl mx-auto">
