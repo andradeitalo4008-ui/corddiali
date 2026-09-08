@@ -74,7 +74,7 @@ export default function Empresa() {
           {/* Guilherme */}
           <div
   className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center"
-  style={{ transform: "translateY(-50px)" }}
+  style={{ transform: "translateY(-0px)" }}
 >
 
             <div className="flex justify-center md:justify-start">
