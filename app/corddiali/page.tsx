@@ -72,7 +72,10 @@ export default function Empresa() {
           </div>
 
           {/* Guilherme */}
-          <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center mt-30">
+          <div
+  className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center"
+  style={{ transform: "translateY(-100px)" }}
+>
 
             <div className="flex justify-center md:justify-start">
               <img
