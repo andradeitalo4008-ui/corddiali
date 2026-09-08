@@ -2,7 +2,13 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 py-10">
+   <footer
+  className="border-t border-white/10 py-10 bg-cover bg-center"
+  style={{
+    backgroundImage:
+      "linear-gradient(rgba(5, 10, 20, 0.35), rgba(5, 10, 20, 0.55)), url('/images/fundo-marmore-corddiali.jpeg')",
+  }}
+>
       <div className="container-x grid md:grid-cols-[1fr_auto_auto] gap-8 items-center">
       <div className="flex items-center">
   <img
