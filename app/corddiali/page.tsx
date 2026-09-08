@@ -85,7 +85,10 @@ export default function Empresa() {
               />
             </div>
 
-            <div className="md:pl-6">
+           <div
+  className="md:pl-6"
+  style={{ transform: "translateY(-80px)" }}
+>
               <div className="eyebrow">Eng. Guilherme De Carli</div>
 
               <h2 className="display text-3xl md:text-5xl mt-4">
