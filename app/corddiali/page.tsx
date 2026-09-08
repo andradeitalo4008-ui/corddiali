@@ -86,7 +86,7 @@ export default function Empresa() {
               <div className="eyebrow">Eng. Guilherme De Carli</div>
 
               <h2 className="display text-3xl md:text-5xl mt-4">
-                Sócio & Diretor Técnico — UDESC
+                Sócio & Diretor Técnico 
               </h2>
 
               <p className="muted mt-6 leading-8">
