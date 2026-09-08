@@ -81,7 +81,7 @@ export default function Empresa() {
               <img
                 src="/images/foto-guilherme.jpeg"
                 alt="Eng. Guilherme De Carli"
-                className="w-full max-w-[400px] h-auto object-contain"
+                className="w-full max-w-[520px] h-auto object-contain"
               />
             </div>
 
