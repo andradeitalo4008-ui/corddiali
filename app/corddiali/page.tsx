@@ -71,54 +71,46 @@ export default function Empresa() {
             </div>
           </div>
 
-          {/* Guilherme */}
-          <div
-  className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center"
-  style={{ transform: "translateY(-0px)" }}
->
+         {/* Guilherme */}
+<div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
 
-   <div className="flex justify-center md:justify-start mt-12">
-  <div className="w-full max-w-[460px] h-[480px] overflow-hidden">
-    <img
-      src="/images/foto-guilherme.jpeg"
-      alt="Eng. Guilherme De Carli"
-      className="w-full h-full object-cover object-center"
-    />
+  {/* Foto Guilherme */}
+  <div className="flex justify-center md:justify-start mt-12">
+    <div className="w-full max-w-[460px] h-[480px] overflow-hidden">
+      <img
+        src="/images/foto-guilherme.jpeg"
+        alt="Eng. Guilherme De Carli"
+        className="w-full h-full object-cover object-center"
+      />
+    </div>
   </div>
+
+  {/* Texto Guilherme */}
+  <div
+    className="md:pl-6"
+    style={{ transform: "translateY(-80px)" }}
+  >
+    <div className="eyebrow">Eng. Guilherme De Carli</div>
+
+    <h2 className="display text-3xl md:text-5xl mt-4">
+      Sócio & Diretor Técnico
+    </h2>
+
+    <p className="muted mt-6 leading-8">
+      Engenheiro Civil com 16 anos de experiência no setor da construção
+      civil, formado pela Universidade do Estado de Santa Catarina (UDESC).
+      Iniciou sua carreira em Joinville (SC), atuando na gestão e execução
+      de edifícios residenciais, onde desenvolveu sua base técnica e
+      gerencial. Ao longo de sua trajetória, participou de obras
+      residenciais, comerciais e industriais em diversas regiões do Brasil,
+      acumulando amplo conhecimento em diferentes sistemas construtivos e
+      métodos executivos.
+    </p>
+  </div>
+
 </div>
-            </div>
+        </div>
 
-           <div
-  className="md:pl-6"
-  style={{ transform: "translateY(-80px)" }}
->
-              <div className="eyebrow">Eng. Guilherme De Carli</div>
-
-              <h2 className="display text-3xl md:text-5xl mt-4">
-                Sócio & Diretor Técnico 
-              </h2>
-
-              <p className="muted mt-6 leading-8">
-                Engenheiro Civil com 16 anos de experiência no setor da
-                construção civil, formado pela Universidade do Estado de Santa
-                Catarina (UDESC). Iniciou sua carreira em Joinville (SC),
-                atuando na gestão e execução de edifícios residenciais, onde
-                desenvolveu sua base técnica e gerencial. Ao longo de sua
-                trajetória, participou de obras residenciais, comerciais e
-                industriais em diversas regiões do Brasil, acumulando amplo
-                conhecimento em diferentes sistemas construtivos e métodos
-                executivos. Entre seus principais trabalhos, destacam-se
-                reformas e ampliações para grandes marcas, como unidades da
-                rede Walmart e pontos de refino da Petrobras, além da construção
-                de casas e edifícios de alto padrão em Santa Catarina. Há cinco
-                anos, estabeleceu-se no litoral catarinense, com foco em Porto
-                Belo e região da Costa Esmeralda, contribuindo diretamente para
-                o desenvolvimento de empreendimentos de destaque e consolidando
-                a atuação da Corddiali como referência em execução de obras e
-                reformas de alta qualidade.
-              </p>
-            </div>
-          </div>
 
           {/* Luisa */}
           <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center mt-24">
