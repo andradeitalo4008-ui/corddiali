@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
+
 export const metadata = {
   title: "Contato",
 };
@@ -11,12 +12,12 @@ export default function Contato() {
       <Header />
 
       <section
-        className="relative min-h-screen pt-36 pb-24 bg-cover bg-center bg-no-repeat overflow-hidden"
+        className="relative min-h-screen pt-36 pb-24 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/images/fundo-contato.jpeg')",
         }}
       >
-        {/* Camada escura para melhorar a leitura */}
+        {/* Camada escura */}
         <div className="absolute inset-0 bg-black/45" />
 
         <div className="container-x relative z-10">
@@ -33,14 +34,19 @@ export default function Contato() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mt-14">
+          {/* Formulário primeiro */}
+          <div className="mt-14">
+            <ContactForm />
+          </div>
 
+          {/* Cards de contato abaixo */}
+          <div className="grid md:grid-cols-3 gap-8 mt-14">
             {/* WhatsApp */}
             <a
               href="https://wa.me/5549991360745"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-white/20 p-8 bg-black/10 backdrop-blur-sm hover:border-copper transition"
+              className="border border-white/20 p-8 bg-black/10 backdrop-blur-sm hover:bg-black/20 transition"
             >
               <div className="eyebrow">WhatsApp</div>
 
@@ -73,7 +79,7 @@ export default function Contato() {
               href="https://www.instagram.com/corddiali/"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-white/20 p-8 bg-black/10 backdrop-blur-sm hover:border-copper transition"
+              className="border border-white/20 p-8 bg-black/10 backdrop-blur-sm hover:bg-black/20 transition"
             >
               <div className="eyebrow">
                 Instagram
@@ -87,12 +93,8 @@ export default function Contato() {
                 @corddiali
               </p>
             </a>
-
           </div>
         </div>
-        <div className="mt-14">
-  <ContactForm />
-</div>
       </section>
 
       <Footer />
