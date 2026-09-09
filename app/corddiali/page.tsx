@@ -151,8 +151,6 @@ export default function Empresa() {
             </div>
 
           </div>
-
-        </div>
       </section>
 
       <Footer />
