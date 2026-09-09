@@ -21,103 +21,166 @@ export default function ContactForm() {
       `Meu WhatsApp: ${whatsapp}`,
       local ? `Local da obra: ${local}` : "",
       etapa ? `Etapa atual: ${etapa}` : "",
-      mensagem ? `Sobre o projeto: ${mensagem}` : "",
+      mensagem ? `Mensagem: ${mensagem}` : "",
     ]
       .filter(Boolean)
       .join("\n");
 
-    const url =
-      "https://wa.me/5549991360745?text=" +
-      encodeURIComponent(texto);
+    const url = `https://wa.me/5549991360745?text=${encodeURIComponent(
+      texto
+    )}`;
 
-    window.location.href = url;
+    window.open(url, "_blank", "noopener,noreferrer");
   }
 
-  const campo =
-    "w-full border border-white/20 bg-black/20 px-5 py-4 text-white placeholder:text-white/50 outline-none focus:border-white/60";
-
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="border border-white/20 bg-black/20 p-6 md:p-8 backdrop-blur-sm"
-    >
+    <div className="border border-white/20 bg-black/10 backdrop-blur-sm p-8 md:p-10">
       <div className="eyebrow">Seu projeto</div>
 
-      <div className="text-2xl mt-4">
+      <h2 className="text-3xl md:text-4xl mt-4">
         Conte-nos um pouco sobre seu projeto
-      </div>
+      </h2>
 
-      <p className="muted mt-3 mb-6">
+      <p className="muted mt-3 max-w-2xl">
         Preencha os dados abaixo para iniciar uma conversa com nossa equipe.
       </p>
 
-      <div className="grid md:grid-cols-2 gap-4">
-        <input
-          name="nome"
-          type="text"
-          placeholder="Nome *"
-          required
-          className={campo}
-        />
-
-        <input
-          name="whatsapp"
-          type="tel"
-          placeholder="WhatsApp *"
-          required
-          className={campo}
-        />
-      </div>
-
-      <input
-        name="local"
-        type="text"
-        placeholder="Onde pretende construir? (opcional)"
-        className={`${campo} mt-4`}
-      />
-
-      <select
-        name="etapa"
-        defaultValue=""
-        className={`${campo} mt-4`}
+      <form
+        onSubmit={handleSubmit}
+        className="grid md:grid-cols-2 gap-6 mt-8"
       >
-        <option value="" className="text-black">
-          Em que etapa você está? (opcional)
-        </option>
-        <option value="Já tenho o terreno" className="text-black">
-          Já tenho o terreno
-        </option>
-        <option value="Estou escolhendo o terreno" className="text-black">
-          Estou escolhendo o terreno
-        </option>
-        <option value="Já tenho projeto arquitetônico" className="text-black">
-          Já tenho projeto arquitetônico
-        </option>
-        <option value="Estou desenvolvendo o projeto" className="text-black">
-          Estou desenvolvendo o projeto
-        </option>
-        <option value="Ainda estou planejando" className="text-black">
-          Ainda estou planejando
-        </option>
-      </select>
+        {/* Nome */}
+        <div>
+          <label
+            htmlFor="nome"
+            className="block text-sm mb-2"
+          >
+            Nome *
+          </label>
 
-      <textarea
-        name="mensagem"
-        rows={4}
-        placeholder="Conte brevemente sobre seu projeto (opcional)"
-        className={`${campo} mt-4 resize-none`}
-      />
+          <input
+            id="nome"
+            name="nome"
+            type="text"
+            required
+            placeholder="Seu nome"
+            className="w-full bg-transparent border border-white/20 px-4 py-4 outline-none transition focus:border-white/60"
+          />
+        </div>
 
-      <button
-        type="submit"
-        className="mt-5 w-full bg-white px-6 py-4 font-medium text-black transition hover:bg-white/90"
-      >
-        Conversar pelo WhatsApp
-      </button>
+        {/* WhatsApp */}
+        <div>
+          <label
+            htmlFor="whatsapp"
+            className="block text-sm mb-2"
+          >
+            WhatsApp *
+          </label>
 
-      <p className="muted mt-3 text-sm">
-        * Nome e WhatsApp são obrigatórios.
-      </p>
-    </form>
+          <input
+            id="whatsapp"
+            name="whatsapp"
+            type="tel"
+            required
+            placeholder="(00) 00000-0000"
+            className="w-full bg-transparent border border-white/20 px-4 py-4 outline-none transition focus:border-white/60"
+          />
+        </div>
+
+        {/* Local da obra */}
+        <div>
+          <label
+            htmlFor="local"
+            className="block text-sm mb-2"
+          >
+            Local da obra
+          </label>
+
+          <input
+            id="local"
+            name="local"
+            type="text"
+            placeholder="Cidade ou condomínio"
+            className="w-full bg-transparent border border-white/20 px-4 py-4 outline-none transition focus:border-white/60"
+          />
+        </div>
+
+        {/* Etapa atual */}
+        <div>
+          <label
+            htmlFor="etapa"
+            className="block text-sm mb-2"
+          >
+            Etapa atual
+          </label>
+
+          <select
+            id="etapa"
+            name="etapa"
+            defaultValue=""
+            className="w-full bg-transparent border border-white/20 px-4 py-4 outline-none transition focus:border-white/60"
+          >
+            <option value="" className="text-black">
+              Selecione
+            </option>
+
+            <option value="Tenho o terreno" className="text-black">
+              Tenho o terreno
+            </option>
+
+            <option value="Tenho o projeto" className="text-black">
+              Tenho o projeto
+            </option>
+
+            <option value="Terreno e projeto" className="text-black">
+              Tenho terreno e projeto
+            </option>
+
+            <option value="Ainda estou planejando" className="text-black">
+              Ainda estou planejando
+            </option>
+          </select>
+        </div>
+
+        {/* Mensagem */}
+        <div className="md:col-span-2">
+          <label
+            htmlFor="mensagem"
+            className="block text-sm mb-2"
+          >
+            Conte-nos sobre seu projeto
+          </label>
+
+          <textarea
+            id="mensagem"
+            name="mensagem"
+            rows={4}
+            placeholder="Conte brevemente o que você pretende construir."
+            className="w-full bg-transparent border border-white/20 px-4 py-4 outline-none transition focus:border-white/60 resize-none"
+          />
+        </div>
+
+        {/* Botão */}
+        <div className="md:col-span-2">
+          <button
+            type="submit"
+            className="
+              w-full
+              border border-white/30
+              bg-transparent
+              px-6 py-4
+              text-white
+              transition-all duration-300
+              hover:border-orange-400
+              hover:bg-orange-400/15
+              hover:text-orange-300
+              cursor-pointer
+            "
+          >
+            Conversar no WhatsApp
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }
