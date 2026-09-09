@@ -41,7 +41,7 @@ export default function Header() {
       {open && (
         <div className="md:hidden fixed inset-0 top-20 bg-black z-40">
           <div className="container-x py-12 grid gap-8 text-3xl font-serif">
-            <Link href="/projetos" onClick={() => setOpen(false)}>PROJETOS</Link>
+            <Link href="/projetos" onClick={() => setOpen(false)}>OBRAS</Link>
             <Link href="/metodo" onClick={() => setOpen(false)}>MÉTODO</Link>
             <Link href="/corddiali" onClick={() => setOpen(false)}>CORDDIALI</Link>
             <Link href="/contato" onClick={() => setOpen(false)}>CONTATO</Link>
