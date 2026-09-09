@@ -19,7 +19,7 @@ export default function Footer() {
 </div>
 
         <div className="flex flex-wrap gap-5 text-[10px] uppercase tracking-[.12em] text-white/55">
-          <Link href="/projetos">Projetos</Link>
+          <Link href="/projetos">Obras</Link>
           <Link href="/metodo">Método</Link>
           <Link href="/corddiali">Empresa</Link>
           <Link href="/contato">Contato</Link>
