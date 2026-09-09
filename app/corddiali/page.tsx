@@ -84,7 +84,10 @@ export default function Empresa() {
             </div>
 
             {/* Texto Guilherme */}
-          <div className="md:pl-6 md:-translate-y-20">
+          <div
+  className="md:pl-6"
+  style={{ transform: "translateY(-150px)" }}
+>
               <div className="eyebrow">Eng. Guilherme De Carli</div>
 
               <h2 className="display text-3xl md:text-5xl mt-4">
