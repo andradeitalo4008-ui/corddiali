@@ -13,7 +13,8 @@ export default function Empresa() {
      <section
   className="section pt-36 overflow-hidden bg-cover bg-center bg-no-repeat"
   style={{
-    backgroundImage: "url('/images/fundo-empresa-mobile.png')",
+   backgroundImage:
+  "linear-gradient(rgba(3, 9, 18, 0.35), rgba(3, 9, 18, 0.35)), url('/images/fundo-empresa-mobile.png')",
   }}
 >
         <div className="container-x">
@@ -91,7 +92,7 @@ export default function Empresa() {
                 Sócio & Diretor Técnico
               </h2>
 
-              <p className="muted mt-6 leading-8">
+              <p className="muted mt-6 leading-8 font-medium">
                 Engenheiro Civil com 16 anos de experiência no setor da
                 construção civil, formado pela Universidade do Estado de Santa
                 Catarina (UDESC). Iniciou sua carreira em Joinville (SC),
