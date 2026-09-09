@@ -275,7 +275,7 @@ export default function Home() {
         </div>
 
         <h3 className="display text-3xl md:text-5xl mt-4">
-          Sócio & Diretor Técnico — UDESC
+          Sócio & Diretor Técnico 
         </h3>
 
         <p className="muted mt-5 leading-7">
