@@ -10,15 +10,15 @@ export default function Empresa() {
     <main>
       <Header />
 
-    <section
-  className="section pt-36 overflow-hidden"
-  style={{
-    backgroundImage: "url('/images/fundo-projeto.jpeg')",
-    backgroundSize: "100% auto",
-    backgroundPosition: "center top",
-    backgroundRepeat: "repeat-y",
-  }}
->
+      <section
+        className="section pt-36 overflow-hidden"
+        style={{
+          backgroundImage: "url('/images/fundo-projeto.jpeg')",
+          backgroundSize: "100% auto",
+          backgroundPosition: "center top",
+          backgroundRepeat: "repeat-y",
+        }}
+      >
         <div className="container-x">
 
           {/* Introdução */}
@@ -71,50 +71,45 @@ export default function Empresa() {
             </div>
           </div>
 
-         {/* Guilherme */}
-<div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
+          {/* Guilherme */}
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center mt-24">
 
-  {/* Foto Guilherme */}
-  <div className="flex justify-center md:justify-start mt-12">
-    <div className="w-full max-w-[460px] h-[480px] overflow-hidden">
-      <img
-        src="/images/foto-guilherme.jpeg"
-        alt="Eng. Guilherme De Carli"
-        className="w-full h-full object-cover object-center"
-      />
-    </div>
-  </div>
+            {/* Foto Guilherme */}
+            <div className="flex justify-center md:justify-start">
+              <img
+                src="/images/foto-guilherme.jpeg"
+                alt="Eng. Guilherme De Carli"
+                className="w-full max-w-[520px] h-auto object-contain"
+              />
+            </div>
 
-  {/* Texto Guilherme */}
-  <div
-    className="md:pl-6"
-    style={{ transform: "translateY(-80px)" }}
-  >
-    <div className="eyebrow">Eng. Guilherme De Carli</div>
+            {/* Texto Guilherme */}
+            <div className="md:pl-6">
+              <div className="eyebrow">Eng. Guilherme De Carli</div>
 
-    <h2 className="display text-3xl md:text-5xl mt-4">
-      Sócio & Diretor Técnico
-    </h2>
+              <h2 className="display text-3xl md:text-5xl mt-4">
+                Sócio & Diretor Técnico
+              </h2>
 
-    <p className="muted mt-6 leading-8">
-      Engenheiro Civil com 16 anos de experiência no setor da construção
-      civil, formado pela Universidade do Estado de Santa Catarina (UDESC).
-      Iniciou sua carreira em Joinville (SC), atuando na gestão e execução
-      de edifícios residenciais, onde desenvolveu sua base técnica e
-      gerencial. Ao longo de sua trajetória, participou de obras
-      residenciais, comerciais e industriais em diversas regiões do Brasil,
-      acumulando amplo conhecimento em diferentes sistemas construtivos e
-      métodos executivos.
-    </p>
-  </div>
+              <p className="muted mt-6 leading-8">
+                Engenheiro Civil com 16 anos de experiência no setor da
+                construção civil, formado pela Universidade do Estado de Santa
+                Catarina (UDESC). Iniciou sua carreira em Joinville (SC),
+                atuando na gestão e execução de edifícios residenciais, onde
+                desenvolveu sua base técnica e gerencial. Ao longo de sua
+                trajetória, participou de obras residenciais, comerciais e
+                industriais em diversas regiões do Brasil, acumulando amplo
+                conhecimento em diferentes sistemas construtivos e métodos
+                executivos.
+              </p>
+            </div>
 
-</div>
-        </div>
-
+          </div>
 
           {/* Luisa */}
           <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center mt-24">
 
+            {/* Texto Luisa */}
             <div className="md:pr-6 order-2 md:order-1">
               <div className="eyebrow">Luisa Corrêa</div>
 
@@ -130,18 +125,19 @@ export default function Empresa() {
                 administradora de uma empresa familiar que se dedica à gestão e
                 ao desenvolvimento de novos negócios e investimentos. Ao longo
                 de sua carreira, acompanhou de perto o trabalho de seu pai, Auri
-                Corrêa, adquirindo experiência em diferentes segmentos do
-                setor, como fabricação de artefatos de cimento (pavers),
-                incorporação de edifícios residenciais pela LA Incorporadora,
-                construção de casas geminadas e administração de imóveis
-                próprios. Sua vivência prática e visão estratégica no mercado
-                imobiliário contribuíram para a consolidação da Corddiali, onde
-                atua na gestão executiva e no relacionamento com clientes e
-                parceiros, garantindo uma operação sólida, transparente e
-                pautada pela excelência.
+                Corrêa, adquirindo experiência em diferentes segmentos do setor,
+                como fabricação de artefatos de cimento (pavers), incorporação
+                de edifícios residenciais pela LA Incorporadora, construção de
+                casas geminadas e administração de imóveis próprios. Sua
+                vivência prática e visão estratégica no mercado imobiliário
+                contribuíram para a consolidação da Corddiali, onde atua na
+                gestão executiva e no relacionamento com clientes e parceiros,
+                garantindo uma operação sólida, transparente e pautada pela
+                excelência.
               </p>
             </div>
 
+            {/* Foto Luisa */}
             <div className="flex justify-center md:justify-end order-1 md:order-2">
               <img
                 src="/images/foto-luiza.jpeg"
@@ -151,6 +147,8 @@ export default function Empresa() {
             </div>
 
           </div>
+
+        </div>
       </section>
 
       <Footer />
