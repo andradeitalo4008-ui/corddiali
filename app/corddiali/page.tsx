@@ -77,12 +77,15 @@ export default function Empresa() {
   style={{ transform: "translateY(-0px)" }}
 >
 
-            <div className="flex justify-center md:justify-start">
-              <img
-                src="/images/foto-guilherme.jpeg"
-                alt="Eng. Guilherme De Carli"
-                className="w-full max-w-[520px] h-auto object-contain"
-              />
+         <div className="flex justify-center md:justify-start mt-12">
+  <div className="w-full max-w-[460px] h-[480px] overflow-hidden">
+    <img
+      src="/images/foto-guilherme.jpeg"
+      alt="Eng. Guilherme De Carli"
+      className="w-full h-full object-cover object-center"
+    />
+  </div>
+</div>
             </div>
 
            <div
