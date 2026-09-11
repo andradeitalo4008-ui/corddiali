@@ -26,11 +26,14 @@ export default function ContactForm() {
       .filter(Boolean)
       .join("\n");
 
-    const url = `https://wa.me/5549991360745?text=${encodeURIComponent(
-      texto
-    )}`;
+    const whatsappUrl =
+      `https://wa.me/5549991360745?text=${encodeURIComponent(texto)}`;
 
-    window.open(url, "_blank", "noopener,noreferrer");
+    // Abre o WhatsApp em uma nova aba
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
+    // Leva a página atual para a confirmação
+    window.location.href = "/obrigado";
   }
 
   return (
@@ -49,12 +52,8 @@ export default function ContactForm() {
         onSubmit={handleSubmit}
         className="grid md:grid-cols-2 gap-6 mt-8"
       >
-        {/* Nome */}
         <div>
-          <label
-            htmlFor="nome"
-            className="block text-sm mb-2"
-          >
+          <label htmlFor="nome" className="block text-sm mb-2">
             Nome *
           </label>
 
@@ -68,12 +67,8 @@ export default function ContactForm() {
           />
         </div>
 
-        {/* WhatsApp */}
         <div>
-          <label
-            htmlFor="whatsapp"
-            className="block text-sm mb-2"
-          >
+          <label htmlFor="whatsapp" className="block text-sm mb-2">
             WhatsApp *
           </label>
 
@@ -87,12 +82,8 @@ export default function ContactForm() {
           />
         </div>
 
-        {/* Local da obra */}
         <div>
-          <label
-            htmlFor="local"
-            className="block text-sm mb-2"
-          >
+          <label htmlFor="local" className="block text-sm mb-2">
             Local da obra
           </label>
 
@@ -105,12 +96,8 @@ export default function ContactForm() {
           />
         </div>
 
-        {/* Etapa atual */}
         <div>
-          <label
-            htmlFor="etapa"
-            className="block text-sm mb-2"
-          >
+          <label htmlFor="etapa" className="block text-sm mb-2">
             Etapa atual
           </label>
 
@@ -142,12 +129,8 @@ export default function ContactForm() {
           </select>
         </div>
 
-        {/* Mensagem */}
         <div className="md:col-span-2">
-          <label
-            htmlFor="mensagem"
-            className="block text-sm mb-2"
-          >
+          <label htmlFor="mensagem" className="block text-sm mb-2">
             Conte-nos sobre seu projeto
           </label>
 
@@ -160,7 +143,6 @@ export default function ContactForm() {
           />
         </div>
 
-        {/* Botão */}
         <div className="md:col-span-2">
           <button
             type="submit"
