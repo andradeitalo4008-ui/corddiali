@@ -23,8 +23,8 @@ export default function Footer() {
           <Link href="/metodo">Método</Link>
           <Link href="/corddiali">Empresa</Link>
           <Link href="/contato">Contato</Link>
-          <a href="#" aria-label="Instagram">Instagram</a>
-          <a href="#" aria-label="WhatsApp">WhatsApp</a>
+          <a href="https://www.instagram.com/corddiali/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+          <a href="https://wa.me/5549991360745" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WhatsApp</a>
         </div>
 
         <div className="text-[10px] text-white/40">© {new Date().getFullYear()} Corddiali</div>
