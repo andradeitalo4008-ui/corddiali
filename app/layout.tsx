@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Script from "next/script";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export const metadata: Metadata = {
   title: {
@@ -44,6 +45,8 @@ export default function RootLayout({
         </Script>
 
         {children}
+
+        <WhatsAppFloat />
       </body>
     </html>
   );
