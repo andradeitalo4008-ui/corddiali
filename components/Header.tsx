@@ -10,7 +10,7 @@ export default function Header() {
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -33,7 +33,7 @@ export default function Header() {
           <Link href="/contato" className="btn">Fale com a Corddiali</Link>
         </nav>
 
-        <button className="md:hidden" onClick={() => setOpen(!open)} aria-label="Abrir menu">
+        <button className="md:hidden -mr-2.5 p-2.5" onClick={() => setOpen(!open)} aria-label={open ? "Fechar menu" : "Abrir menu"} aria-expanded={open}>
           {open ? <X /> : <Menu />}
         </button>
       </div>
