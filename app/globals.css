@@ -79,3 +79,8 @@ a:hover .project-image{transform:scale(1.018);filter:brightness(.95)}
   .section{padding:78px 0}
   .editorial-grid{display:block}
 }
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}

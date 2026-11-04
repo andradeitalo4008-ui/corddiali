@@ -143,7 +143,7 @@ export default function Home() {
 
    <Reveal delay={0.1}>
   <div className="flex justify-center md:justify-start md:pt-60 md:-ml+24">
-    <img
+    <img loading="lazy" decoding="async"
       src="/images/imagen-ceos.JPEG"
       className="w-full max-w-[480px] h-auto object-cover"
       alt="Guilherme De Carli e Luisa Corrêa — Corddiali"
@@ -204,7 +204,7 @@ export default function Home() {
       </section>
 
     <section className="relative min-h-[82vh] grid place-items-center overflow-hidden">
-  <img
+  <img loading="lazy" decoding="async"
     src="/fundo-golfe.jpeg"
     className="absolute inset-0 h-full w-full object-cover"
     alt="Campo de golfe em cenário paradisíaco"
@@ -235,7 +235,7 @@ export default function Home() {
           <div className="editorial-grid mt-12">
             {projects.slice(0, 4).map((p, i) => (
               <Link key={p.slug} href={`/projetos/${p.slug}`} className={`${i % 3 === 0 ? "md:col-span-7" : "md:col-span-5"} block overflow-hidden`}>
-                <img src={p.image} alt={p.title} className="project-image" />
+                <img loading="lazy" decoding="async" src={p.image} alt={p.title} className="project-image" />
                 <div className="py-4">
                   <div className="text-xl">{p.title}</div>
                   <div className="text-[10px] mt-2 uppercase tracking-[.14em] text-white/45">{p.category} • {p.location}</div>
@@ -306,7 +306,7 @@ export default function Home() {
       </div>
 
       <div className="w-full">
-        <img
+        <img loading="lazy" decoding="async"
           src="/images/foto-guilherme.jpeg"
           alt="Guilherme De Carli"
           className="w-full aspect-[3/4] object-cover object-top"
@@ -317,7 +317,7 @@ export default function Home() {
     {/* LUISA */}
     <div className="grid md:grid-cols-[0.65fr_1.35fr] gap-10 md:gap-16 mt-20 md:mt-28 items-start">
       <div className="w-full">
-        <img
+        <img loading="lazy" decoding="async"
           src="/images/foto-luiza.jpeg"
           alt="Luisa Corrêa"
           className="w-full aspect-[3/4] object-cover object-top"
@@ -384,7 +384,7 @@ export default function Home() {
   }}
 >
         <div className="container-x grid md:grid-cols-2 gap-14 items-center">
-      <img src="/images/excelencia-tecnica-corddiali.jpeg" alt="Execução técnica Corddiali" className="min-h-[520px] object-cover" />
+      <img loading="lazy" decoding="async" src="/images/excelencia-tecnica-corddiali.jpeg" alt="Execução técnica Corddiali" className="min-h-[520px] object-cover" />
           <div>
             <div className="eyebrow">Excelência técnica</div>
             <h2 className="display text-4xl md:text-6xl mt-4">O padrão está nos bastidores.</h2>
@@ -429,7 +429,7 @@ export default function Home() {
       </section>
 
         <section className="relative min-h-[72vh] grid place-items-center overflow-hidden">
-  <img
+  <img loading="lazy" decoding="async"
     src="/images/fundo-projeto.jpeg"
     className="absolute inset-0 h-full w-full object-cover"
     alt="Projeto arquitetônico Corddiali"
