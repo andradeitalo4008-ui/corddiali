@@ -80,7 +80,7 @@ export default function Metodo() {
         className="section relative overflow-hidden"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(4, 10, 20, 0.72), rgba(4, 10, 20, 0.84)), url('/images/fundo-escopo.png')",
+            "linear-gradient(rgba(4, 10, 20, 0.72), rgba(4, 10, 20, 0.84)), url('/images/fundo-escopo.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -151,7 +151,7 @@ export default function Metodo() {
         className="section relative overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(5,10,20,0.48), rgba(5,10,20,0.58)), url('/images/metodo-personalizacao.png')",
+            "linear-gradient(rgba(5,10,20,0.48), rgba(5,10,20,0.58)), url('/images/metodo-personalizacao.webp')",
         }}
       >
         {/* ENTRADA SUAVE */}
@@ -229,7 +229,7 @@ export default function Metodo() {
         className="section relative overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(5,10,20,0.48), rgba(5,10,20,0.58)), url('/images/metodo-processo.png')",
+            "linear-gradient(rgba(5,10,20,0.48), rgba(5,10,20,0.58)), url('/images/metodo-processo.webp')",
         }}
       >
         {/* ENTRADA SUAVE */}
@@ -255,7 +255,7 @@ export default function Metodo() {
         className="relative overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(5,10,20,0.50), rgba(5,10,20,0.58)), url('/images/metodo-modelo-execucao.png')",
+            "linear-gradient(rgba(5,10,20,0.50), rgba(5,10,20,0.58)), url('/images/metodo-modelo-execucao.webp')",
         }}
       >
         {/* ENTRADA SUAVE */}
