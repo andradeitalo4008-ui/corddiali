@@ -56,19 +56,21 @@ export default function Home() {
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-5 md:gap-8">
-          <Link
+          <a
             className="inline-flex items-center gap-4 border border-[#c7a46a] px-6 py-4 text-[11px] uppercase tracking-[0.14em] text-white transition hover:bg-[#c7a46a]/10"
-            href="/projetos"
+            href={`https://wa.me/5549991360745?text=${encodeURIComponent("Olá! Vim pelo site da Corddiali e gostaria de conversar sobre um projeto.")}`}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Conheça nossas Obras 
+            Agendar uma conversa
             <ArrowRight size={15} />
-          </Link>
+          </a>
 
           <Link
-            className="group inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.14em] text-white"
-            href="/metodo"
+            className="group inline-flex items-center gap-3 py-3 text-[11px] uppercase tracking-[0.14em] text-white"
+            href="/projetos"
           >
-            <span>Nosso método</span>
+            <span>Conheça nossas obras</span>
             <span className="h-px w-16 bg-[#c7a46a] transition-all group-hover:w-20" />
           </Link>
         </div>
