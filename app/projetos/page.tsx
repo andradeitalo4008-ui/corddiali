@@ -34,7 +34,7 @@ export default function Projetos() {
             {projects.map((p) => (
               <Link href={`/projetos/${p.slug}`} key={p.slug}>
                 <div className="group">
-                  <img
+                  <img loading="lazy" decoding="async"
                     className="project-image"
                     src={p.image}
                     alt={p.title}
