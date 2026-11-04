@@ -40,7 +40,7 @@ export default function Header() {
 
       {open && (
      <div
-  className="md:hidden fixed inset-0 top-20 z-40 bg-cover bg-center bg-no-repeat"
+  className="md:hidden absolute inset-x-0 top-full h-[calc(100dvh-5rem)] overflow-y-auto z-40 bg-[#07101d] bg-cover bg-center bg-no-repeat"
   style={{
     backgroundImage: "url('/images/fundo-menu-mobile.webp')",
   }}
