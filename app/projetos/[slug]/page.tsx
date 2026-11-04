@@ -63,7 +63,7 @@ export default function Project({
           {p.gallery && p.gallery.length > 0 && (
   <div className="grid md:grid-cols-2 gap-4 mt-10">
     {p.gallery.map((image, index) => (
-      <img
+      <img loading="lazy" decoding="async"
         key={image}
         src={image}
         alt={`${p.title} - imagem ${index + 1}`}
