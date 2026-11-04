@@ -80,6 +80,15 @@ a:hover .project-image{transform:scale(1.018);filter:brightness(.95)}
   .editorial-grid{display:block}
 }
 
+.obras-section{background-size:cover}
+@media (max-width:767px){
+  /* Keep Obras below the fixed header and preserve the background's proportions. */
+  .obras-section{
+    padding-top:128px;
+    background-size:100% 100%,100% auto;
+  }
+}
+
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
