@@ -40,9 +40,9 @@ export default function Header() {
 
       {open && (
      <div
-  className="md:hidden absolute right-3.5 top-full mt-2 w-56 max-w-[calc(100vw-1.75rem)] max-h-[calc(100dvh-6.5rem)] overflow-y-auto z-40 rounded-lg border border-[#c7a46a]/40 bg-transparent"
+  className="md:hidden absolute right-1.5 top-full mt-1 w-40 max-w-[calc(100vw-.75rem)] max-h-[calc(100dvh-6rem)] overflow-y-auto z-40 rounded-tr-md border-r border-t border-[#c7a46a]/40 bg-transparent"
 >
-          <div className="p-5 grid gap-2 text-right text-lg font-sans font-light tracking-[.16em]">
+          <div className="p-3 grid gap-1 text-right text-sm font-sans font-light tracking-[.12em]">
             <Link className="block py-2.5" href="/projetos" onClick={() => setOpen(false)}>OBRAS</Link>
             <Link className="block py-2.5" href="/metodo" onClick={() => setOpen(false)}>MÉTODO</Link>
             <Link className="block py-2.5" href="/corddiali" onClick={() => setOpen(false)}>CORDDIALI</Link>
