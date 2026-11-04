@@ -40,12 +40,12 @@ export default function Header() {
 
       {open && (
      <div
-  className="md:hidden absolute inset-x-0 top-full h-[calc(100dvh-5rem)] overflow-y-auto z-40 bg-[#07101d] bg-cover bg-center bg-no-repeat"
+  className="md:hidden absolute inset-x-0 top-full max-h-[calc(100dvh-5rem)] overflow-y-auto z-40 bg-[#07101d] bg-cover bg-center bg-no-repeat"
   style={{
     backgroundImage: "url('/images/fundo-menu-mobile.webp')",
   }}
 >
-          <div className="container-x py-12 grid gap-8 text-3xl font-serif">
+          <div className="container-x py-6 grid gap-6 text-3xl font-serif">
             <Link href="/projetos" onClick={() => setOpen(false)}>OBRAS</Link>
             <Link href="/metodo" onClick={() => setOpen(false)}>MÉTODO</Link>
             <Link href="/corddiali" onClick={() => setOpen(false)}>CORDDIALI</Link>
