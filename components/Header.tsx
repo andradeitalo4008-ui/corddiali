@@ -40,16 +40,13 @@ export default function Header() {
 
       {open && (
      <div
-  className="md:hidden absolute left-3.5 top-full mt-2 w-60 max-w-[calc(100vw-1.75rem)] max-h-[calc(100dvh-6.5rem)] overflow-y-auto z-40 rounded-lg border border-[#c7a46a]/25 bg-[#07101d] bg-cover bg-center bg-no-repeat shadow-2xl"
-  style={{
-    backgroundImage: "url('/images/fundo-menu-mobile.webp')",
-  }}
+  className="md:hidden absolute right-3.5 top-full mt-2 w-56 max-w-[calc(100vw-1.75rem)] max-h-[calc(100dvh-6.5rem)] overflow-y-auto z-40 rounded-lg border border-[#c7a46a]/40 bg-transparent"
 >
-          <div className="p-6 grid gap-6 text-3xl font-serif">
-            <Link href="/projetos" onClick={() => setOpen(false)}>OBRAS</Link>
-            <Link href="/metodo" onClick={() => setOpen(false)}>MÉTODO</Link>
-            <Link href="/corddiali" onClick={() => setOpen(false)}>CORDDIALI</Link>
-            <Link href="/contato" onClick={() => setOpen(false)}>CONTATO</Link>
+          <div className="p-5 grid gap-2 text-right text-lg font-sans font-light tracking-[.16em]">
+            <Link className="block py-2.5" href="/projetos" onClick={() => setOpen(false)}>OBRAS</Link>
+            <Link className="block py-2.5" href="/metodo" onClick={() => setOpen(false)}>MÉTODO</Link>
+            <Link className="block py-2.5" href="/corddiali" onClick={() => setOpen(false)}>CORDDIALI</Link>
+            <Link className="block py-2.5" href="/contato" onClick={() => setOpen(false)}>CONTATO</Link>
           </div>
         </div>
       )}
