@@ -42,7 +42,7 @@ export default function Header() {
      <div
   className="md:hidden fixed inset-0 top-20 z-40 bg-cover bg-center bg-no-repeat"
   style={{
-    backgroundImage: "url('/images/fundo-menu-mobile.png')",
+    backgroundImage: "url('/images/fundo-menu-mobile.webp')",
   }}
 >
           <div className="container-x py-12 grid gap-8 text-3xl font-serif">
