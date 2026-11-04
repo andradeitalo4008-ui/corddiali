@@ -61,10 +61,10 @@ gallery: [
     title: "Adega Vino!",
     category: "Gastronomia & Hospitality",
     location: "Balneário Camboriú / SC",
-    image: "/images/projetos/adega-vino/VINO-FOTO PRINCIPAL.PNG",
+    image: "/images/projetos/adega-vino/VINO-FOTO PRINCIPAL.webp",
 
 gallery: [
-  "/images/projetos/adega-vino/VINO-ESCADA VERMELHA.PNG",
+  "/images/projetos/adega-vino/VINO-ESCADA VERMELHA.webp",
   "/images/projetos/adega-vino/VINO-ESCADA VINHOS.jpeg",
   "/images/projetos/adega-vino/VINO-FACHADA A NOITE.jpeg",
   "/images/projetos/adega-vino/VINO-FOTO ROLHOMETRO.jpeg",
@@ -74,9 +74,9 @@ gallery: [
   "/images/projetos/adega-vino/VINO-MESA DO LAGO.jpeg",
   "/images/projetos/adega-vino/VINO-PORTA ENTRADA.jpeg",
   "/images/projetos/adega-vino/VINO-PORTA FERRO.jpeg",
-  "/images/projetos/adega-vino/VINO-SALA 1.PNG",
+  "/images/projetos/adega-vino/VINO-SALA 1.webp",
   "/images/projetos/adega-vino/VINO-SALA3.jpeg",
-  "/images/projetos/adega-vino/VINO-SEJA BEM VINO.PNG",
+  "/images/projetos/adega-vino/VINO-SEJA BEM VINO.webp",
   "/images/projetos/adega-vino/VINO-TETO DE TACA.jpeg",
 ],
     description:
@@ -94,7 +94,7 @@ gallery: [
   category: "Construção Modular",
   location: "Itajaí / SC",
 
- image: "/images/projetos/smart-living/SmartLivingContainer-FOTO PRINCIPAL PROJETO.PNG",
+ image: "/images/projetos/smart-living/SmartLivingContainer-FOTO PRINCIPAL PROJETO.webp",
 
 gallery: [
   "/images/projetos/smart-living/SmartLivingContainer 1 (1).jpeg",
@@ -103,7 +103,7 @@ gallery: [
   "/images/projetos/smart-living/SmartLivingContainer-CORREDOR DE BAIXO.jpeg",
   "/images/projetos/smart-living/SmartLivingContainer-CORREDOR DE CIMA.jpeg",
   "/images/projetos/smart-living/SmartLivingContainer-FOTO1.jpeg",
-  "/images/projetos/smart-living/SmartLivingContainer-PROJETO FRENTE.PNG",
+  "/images/projetos/smart-living/SmartLivingContainer-PROJETO FRENTE.webp",
 ],
 
   description:

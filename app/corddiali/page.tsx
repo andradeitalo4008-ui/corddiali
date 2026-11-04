@@ -14,7 +14,7 @@ export default function Empresa() {
   className="section pt-36 overflow-hidden bg-cover bg-center bg-no-repeat"
   style={{
    backgroundImage:
-  "linear-gradient(rgba(3, 9, 18, 0.35), rgba(3, 9, 18, 0.35)), url('/images/fundo-empresa-mobile.png')",
+  "linear-gradient(rgba(3, 9, 18, 0.35), rgba(3, 9, 18, 0.35)), url('/images/fundo-empresa-mobile.webp')",
   }}
 >
         <div className="container-x">
@@ -74,7 +74,7 @@ export default function Empresa() {
 
             {/* Foto Guilherme */}
             <div className="flex justify-center md:justify-start">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/images/foto-guilherme.jpeg"
                 alt="Eng. Guilherme De Carli"
                 className="w-full max-w-[520px] h-auto object-contain"
@@ -137,7 +137,7 @@ export default function Empresa() {
 
             {/* Foto Luisa */}
             <div className="flex justify-center md:justify-end order-1 md:order-2">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/images/foto-luiza.jpeg"
                 alt="Luisa Corrêa"
                 className="w-full max-w-[520px] h-auto object-contain"

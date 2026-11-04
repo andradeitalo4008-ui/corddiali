@@ -13,11 +13,11 @@ export default function Timeline() {
     <div className="relative mt-12">
       <div className="absolute left-0 right-0 top-4 h-px bg-white/10 hidden md:block" />
       <motion.div
-        className="absolute left-0 top-4 h-px bg-copper hidden md:block"
-        initial={{ width: 0 }}
-        whileInView={{ width: "100%" }}
+        className="absolute left-0 right-0 top-4 h-px bg-copper hidden md:block origin-left"
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 1.4 }}
+        transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
       />
       <div className="grid md:grid-cols-4 gap-8">
         {steps.map(([n, title, items]) => (
