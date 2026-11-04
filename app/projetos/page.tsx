@@ -14,7 +14,7 @@ export default function Projetos() {
         className="section pt-36 relative overflow-hidden"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(4, 9, 18, 0.30), rgba(4, 9, 18, 0.48)), url('/images/fundo-projetos-corddiali.png')",
+            "linear-gradient(rgba(4, 9, 18, 0.30), rgba(4, 9, 18, 0.48)), url('/images/fundo-projetos-corddiali.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center top",
           backgroundRepeat: "no-repeat",
