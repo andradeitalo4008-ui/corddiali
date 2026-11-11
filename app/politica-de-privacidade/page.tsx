@@ -15,8 +15,8 @@ const sections: { title: string; body: React.ReactNode }[] = [
     body: (
       <p>
         Esta política se aplica ao site www.corddiali.com.br e aos canais de
-        atendimento da Corddiali Construções Personalizadas
-        (&ldquo;Corddiali&rdquo;), empresa de construção de casas de alto
+        atendimento da CORDDIALI CONSTRUCOES PERSONALIZADAS LTDA, inscrita no
+        CNPJ nº 58.818.156/0001-64 (&ldquo;Corddiali&rdquo;), empresa de construção de casas de alto
         padrão com atuação no litoral de Santa Catarina. A Corddiali é a
         controladora dos dados pessoais tratados nesses canais, nos termos da
         Lei Geral de Proteção de Dados (Lei nº 13.709/2018 &ndash; LGPD).
