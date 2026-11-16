@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Script from "next/script";
+import Marketing from "@/components/Marketing";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export const metadata: Metadata = {
@@ -44,6 +45,7 @@ export default function RootLayout({
           `}
         </Script>
 
+        <Marketing />
         {children}
 
         <WhatsAppFloat />

@@ -1,6 +1,5 @@
 "use client";
 
-import Script from "next/script";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -9,16 +8,6 @@ export default function Obrigado() {
   return (
     <main>
       <Header />
-
-      <Script id="google-ads-conversion">
-        {`
-          gtag('event', 'conversion', {
-            'send_to': 'AW-17442865573/SXGhCIqxj_0cEKWDrP1A',
-            'value': 1.0,
-            'currency': 'BRL'
-          });
-        `}
-      </Script>
 
       <section
         className="relative min-h-screen flex items-center bg-cover bg-center"
@@ -44,6 +33,7 @@ export default function Obrigado() {
             <div className="flex flex-col sm:flex-row gap-4 mt-10">
               <a
                 href="https://wa.me/5549991360745"
+                data-no-conversion
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border border-white/30 bg-transparent px-6 py-4 text-white transition-all duration-300 hover:border-orange-400 hover:bg-orange-400/15 hover:text-orange-300"

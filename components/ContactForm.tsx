@@ -1,168 +1,222 @@
 "use client";
-
-import { FormEvent } from "react";
-
+import { FormEvent, useRef, useState } from "react";
+import Link from "next/link";
+import {
+  investimentos,
+  locais,
+  prazos,
+  terrenos,
+  validateLead,
+  whatsappUrl,
+} from "@/lib/lead";
+import { attribution, trackLead } from "@/lib/tracking";
 export default function ContactForm() {
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
+  const [result, setResult] = useState<{
+    url: string;
+    delivered: boolean;
+  } | null>(null);
+  const submitting = useRef(false);
+  const [phone, setPhone] = useState("");
+  async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-
+    if (submitting.current || result) return;
     const form = new FormData(event.currentTarget);
-
-    const nome = String(form.get("nome") || "");
-    const whatsapp = String(form.get("whatsapp") || "");
-    const local = String(form.get("local") || "");
-    const etapa = String(form.get("etapa") || "");
-    const mensagem = String(form.get("mensagem") || "");
-
-    const texto = [
-      `Olá, sou ${nome}.`,
-      "",
-      "Gostaria de conversar sobre um projeto com a Corddiali.",
-      `Meu WhatsApp: ${whatsapp}`,
-      local ? `Local da obra: ${local}` : "",
-      etapa ? `Etapa atual: ${etapa}` : "",
-      mensagem ? `Mensagem: ${mensagem}` : "",
-    ]
-      .filter(Boolean)
-      .join("\n");
-
-    const whatsappUrl =
-      `https://wa.me/5549991360745?text=${encodeURIComponent(texto)}`;
-
-    // Abre o WhatsApp em uma nova aba
-    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
-
-    // Leva a página atual para a confirmação
-    window.location.href = "/obrigado";
+    const parsed = validateLead({
+      ...Object.fromEntries(form),
+      consentimento: form.get("consentimento") === "on",
+      origem: attribution(),
+    });
+    if (!parsed.data) {
+      setError(parsed.error!);
+      return;
+    }
+    submitting.current = true;
+    setBusy(true);
+    setError("");
+    try {
+      const response = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(parsed.data),
+      });
+      const body = await response.json();
+      if (!response.ok)
+        throw new Error(
+          body.error || "Não foi possível enviar. Tente novamente.",
+        );
+      const url = whatsappUrl(parsed.data);
+      setResult({ url, delivered: body.delivered });
+      trackLead(parsed.data, body.id, body.qualified);
+      window.open(url, "_blank", "noopener,noreferrer");
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Falha de conexão. Tente novamente.",
+      );
+    } finally {
+      setBusy(false);
+      submitting.current = false;
+    }
   }
-
   return (
-    <div className="border border-white/20 bg-black/10 backdrop-blur-sm p-8 md:p-10">
+    <div
+      className="lead-form border border-white/20 bg-[#0b121b]/95 p-5 md:p-8"
+      id="formulario"
+    >
       <div className="eyebrow">Seu projeto</div>
-
-      <h2 className="text-3xl md:text-4xl mt-4">
+      <h2 className="display text-2xl md:text-3xl mt-2">
         Conte-nos um pouco sobre seu projeto
       </h2>
-
-      <p className="muted mt-3 max-w-2xl">
-        Preencha os dados abaixo para iniciar uma conversa com nossa equipe.
-      </p>
-
-      <form
-        onSubmit={handleSubmit}
-        className="grid md:grid-cols-2 gap-6 mt-8"
-      >
-        <div>
-          <label htmlFor="nome" className="block text-sm mb-2">
-            Nome *
-          </label>
-
-          <input
-            id="nome"
-            name="nome"
-            type="text"
-            required
-            placeholder="Seu nome"
-            className="w-full bg-transparent border border-white/20 px-4 py-4 outline-none transition focus:border-white/60"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="whatsapp" className="block text-sm mb-2">
-            WhatsApp *
-          </label>
-
-          <input
-            id="whatsapp"
-            name="whatsapp"
-            type="tel"
-            required
-            placeholder="(00) 00000-0000"
-            className="w-full bg-transparent border border-white/20 px-4 py-4 outline-none transition focus:border-white/60"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="local" className="block text-sm mb-2">
-            Local da obra
-          </label>
-
-          <input
-            id="local"
-            name="local"
-            type="text"
-            placeholder="Cidade ou condomínio"
-            className="w-full bg-transparent border border-white/20 px-4 py-4 outline-none transition focus:border-white/60"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="etapa" className="block text-sm mb-2">
-            Etapa atual
-          </label>
-
-          <select
-            id="etapa"
-            name="etapa"
-            defaultValue=""
-            className="w-full bg-transparent border border-white/20 px-4 py-4 outline-none transition focus:border-white/60"
+      {result ? (
+        <div role="status" className="mt-6 space-y-4">
+          <p>
+            {result.delivered
+              ? "Obrigado! Recebemos suas informações."
+              : "Obrigado! Continue pelo WhatsApp para garantir o contato com a equipe."}
+          </p>
+          <a
+            className="btn btn-primary"
+            href={result.url}
+            data-no-conversion
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <option value="" className="text-black">
-              Selecione
-            </option>
-
-            <option value="Tenho o terreno" className="text-black">
-              Tenho o terreno
-            </option>
-
-            <option value="Tenho o projeto" className="text-black">
-              Tenho o projeto
-            </option>
-
-            <option value="Terreno e projeto" className="text-black">
-              Tenho terreno e projeto
-            </option>
-
-            <option value="Ainda estou planejando" className="text-black">
-              Ainda estou planejando
-            </option>
-          </select>
+            Continuar no WhatsApp
+          </a>
         </div>
-
-        <div className="md:col-span-2">
-          <label htmlFor="mensagem" className="block text-sm mb-2">
-            Conte-nos sobre seu projeto
+      ) : (
+        <form onSubmit={submit} className="grid sm:grid-cols-2 gap-4 mt-5">
+          <div>
+            <label htmlFor="nome">Nome *</label>
+            <input
+              id="nome"
+              name="nome"
+              required
+              minLength={2}
+              maxLength={200}
+              autoComplete="name"
+            />
+          </div>
+          <div>
+            <label htmlFor="whatsapp">WhatsApp *</label>
+            <input
+              id="whatsapp"
+              name="whatsapp"
+              type="tel"
+              inputMode="tel"
+              autoComplete="tel-national"
+              required
+              value={phone}
+              placeholder="(49) 99136-0745"
+              onChange={(e) => {
+                const n = e.target.value.replace(/\D/g, "").slice(0, 11);
+                setPhone(
+                  n.length > 2
+                    ? `(${n.slice(0, 2)}) ${n.slice(2, n.length > 10 ? 7 : 6)}${n.length > 6 ? "-" + n.slice(n.length > 10 ? 7 : 6) : ""}`
+                    : n,
+                );
+              }}
+            />
+          </div>
+          <div>
+            <label htmlFor="email">E-mail (opcional)</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              maxLength={200}
+              autoComplete="email"
+            />
+          </div>
+          {[
+            ["terreno", "Você já tem terreno?", terrenos],
+            [
+              "investimento",
+              "Quanto pretende investir na obra?",
+              investimentos,
+            ],
+            ["inicio", "Quando pretende começar?", prazos],
+          ].map(([name, label, options]) => (
+            <div key={name as string}>
+              <label htmlFor={name as string}>{label} *</label>
+              <select
+                id={name as string}
+                name={name as string}
+                required
+                defaultValue=""
+              >
+                <option value="" disabled>
+                  Selecione
+                </option>
+                {(options as readonly string[]).map((value) => (
+                  <option key={value}>{value}</option>
+                ))}
+              </select>
+            </div>
+          ))}
+          <div className="sm:col-span-2">
+            <label htmlFor="local">Onde fica o terreno? *</label>
+            <input
+              id="local"
+              name="local"
+              list="locais"
+              required
+              maxLength={200}
+              placeholder="Cidade ou condomínio (ou local desejado)"
+            />
+            <datalist id="locais">
+              {locais.map((local) => (
+                <option key={local} value={local} />
+              ))}
+            </datalist>
+          </div>
+          <div className="sm:col-span-2">
+            <label htmlFor="mensagem">Mensagem (opcional)</label>
+            <textarea id="mensagem" name="mensagem" rows={2} maxLength={3000} />
+          </div>
+          <div aria-hidden="true" className="absolute -left-[10000px]">
+            <label htmlFor="website">Website</label>
+            <input
+              id="website"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
+          <label className="consent-label sm:col-span-2 flex items-start gap-3 text-sm">
+            <input
+              type="checkbox"
+              name="consentimento"
+              required
+              className="mt-1"
+            />
+            <span>
+              Concordo com o tratamento dos meus dados para atendimento e
+              mensuração conforme a{" "}
+              <Link className="underline" href="/politica-de-privacidade">
+                Política de Privacidade
+              </Link>
+              . *
+            </span>
           </label>
-
-          <textarea
-            id="mensagem"
-            name="mensagem"
-            rows={4}
-            placeholder="Conte brevemente o que você pretende construir."
-            className="w-full bg-transparent border border-white/20 px-4 py-4 outline-none transition focus:border-white/60 resize-none"
-          />
-        </div>
-
-        <div className="md:col-span-2">
+          {error && (
+            <p role="alert" className="sm:col-span-2 text-red-200">
+              {error}
+            </p>
+          )}
           <button
+            disabled={busy}
+            aria-busy={busy}
+            className="btn btn-primary justify-center sm:col-span-2 disabled:opacity-60"
             type="submit"
-            className="
-              w-full
-              border border-white/30
-              bg-transparent
-              px-6 py-4
-              text-white
-              transition-all duration-300
-              hover:border-orange-400
-              hover:bg-orange-400/15
-              hover:text-orange-300
-              cursor-pointer
-            "
           >
-            Conversar no WhatsApp
+            {busy ? "Enviando…" : "Enviar e conversar no WhatsApp"}
           </button>
-        </div>
-      </form>
+        </form>
+      )}
     </div>
   );
 }

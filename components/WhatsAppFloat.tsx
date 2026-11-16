@@ -33,6 +33,7 @@ export default function WhatsAppFloat() {
       );
       if (!link || link.hasAttribute("data-no-conversion")) return;
       trackWhatsAppClick();
+      try { window.fbq?.("track", "Contact"); } catch { /* Analytics must not block navigation. */ }
     }
 
     document.addEventListener("click", onClick, true);
