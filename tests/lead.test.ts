@@ -196,3 +196,42 @@ test("limite distribuído: comando atômico Redis e falha fechada na Vercel", as
     globalThis.fetch = savedFetch;
   }
 });
+
+test("reenvio com mesma chave retorna recibo sem repetir entregas", async () => {
+  const { randomUUID } = await import("node:crypto");
+  const originalFetch = globalThis.fetch;
+  const savedEnv = { ...process.env };
+  delete process.env.VERCEL;
+  Object.assign(process.env, {
+    RESEND_API_KEY: "test",
+    LEAD_TO_EMAIL: "test@example.com",
+    LEAD_FROM_EMAIL: "site@example.com",
+  });
+  let sends = 0;
+  globalThis.fetch = async () => {
+    sends++;
+    return new Response("{}", { status: 200 });
+  };
+  const key = randomUUID();
+  const make = (patch = {}) =>
+    new NextRequest("http://localhost/api/lead", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-forwarded-for": "192.0.2.247",
+        "idempotency-key": key,
+      },
+      body: JSON.stringify({ ...valid, ...patch }),
+    });
+  try {
+    const first = await (await POST(make())).json();
+    const second = await (await POST(make())).json();
+    assert.deepEqual(first, second);
+    assert.equal(sends, 1);
+    assert.equal(first.id, key);
+    assert.equal((await POST(make({ nome: "Outra pessoa" }))).status, 409);
+  } finally {
+    globalThis.fetch = originalFetch;
+    process.env = savedEnv;
+  }
+});

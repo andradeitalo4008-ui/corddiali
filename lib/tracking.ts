@@ -30,7 +30,20 @@ export function attribution() {
   }
   return firstVisit;
 }
+const trackedLeads = new Set<string>();
 export function trackLead(data: LeadInput, id: string, qualified: boolean) {
+  if (trackedLeads.has(id)) return;
+  try {
+    if (sessionStorage.getItem(`corddiali:tracked:${id}`)) return;
+  } catch {
+    /* Storage denied. */
+  }
+  trackedLeads.add(id);
+  try {
+    sessionStorage.setItem(`corddiali:tracked:${id}`, "1");
+  } catch {
+    /* In-memory guard remains. */
+  }
   // Analytics errors must never interrupt the WhatsApp flow.
   const safely = (fn: () => void) => {
     try {
@@ -84,4 +97,28 @@ export function trackLead(data: LeadInput, id: string, qualified: boolean) {
         { eventID: id },
       ),
     );
+}
+
+export async function submissionKey(data: LeadInput) {
+  const hash = await crypto.subtle.digest(
+    "SHA-256",
+    new TextEncoder().encode(JSON.stringify(data)),
+  );
+  const fingerprint = Array.from(new Uint8Array(hash), (byte) =>
+    byte.toString(16).padStart(2, "0"),
+  ).join("");
+  const key = `corddiali:submission:${fingerprint}`;
+  try {
+    const saved = sessionStorage.getItem(key);
+    if (saved) return saved;
+  } catch {
+    /* Storage denied. */
+  }
+  const id = crypto.randomUUID();
+  try {
+    sessionStorage.setItem(key, id);
+  } catch {
+    /* Retry in the component keeps the same key. */
+  }
+  return id;
 }

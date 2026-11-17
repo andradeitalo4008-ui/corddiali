@@ -45,12 +45,14 @@ Copie `.env.example` para `.env.local` no desenvolvimento. Configure os valores 
 | `UPSTASH_REDIS_REST_URL` | Redis REST para contador de tentativas compartilhado entre instâncias Vercel |
 | `UPSTASH_REDIS_REST_TOKEN` | Token Redis, somente servidor |
 | `NEXT_PUBLIC_GADS_ID` | `AW-17442865573` (a tag existente é mantida) |
-| `NEXT_PUBLIC_GADS_LABEL_FORM` | Somente o rótulo fornecido pelo Google, sem ID ou barra; vazio desativa esse envio |
-| `NEXT_PUBLIC_GADS_LABEL_QUALIFIED` | Rótulo de lead qualificado; vazio desativa esse envio |
-| `NEXT_PUBLIC_META_PIXEL_ID` | ID numérico do Pixel; vazio mantém Pixel desativado |
+| `NEXT_PUBLIC_GADS_LABEL_FORM` | `r6AGCKDi6LkdEKWDtP1A`, sem ID ou barra; vazio desativa esse envio |
+| `NEXT_PUBLIC_GADS_LABEL_QUALIFIED` | `ctJQCKPi6LkdEKWDtP1A`; vazio desativa esse envio |
+| `NEXT_PUBLIC_META_PIXEL_ID` | `1106058259251298`; vazio mantém Pixel desativado |
 | `META_CAPI_TOKEN` | Opcional, somente servidor: ativa Conversions API com o mesmo Pixel/eventID |
 
-O limite é de cinco tentativas por IP em 15 minutos. Em desenvolvimento há contador em memória. Na Vercel o Redis é obrigatório; ausência/falha retorna 503, sem conversão, para não deixar o endpoint público desprotegido. Honeypot, validação no cliente/servidor, restrição de origem, tamanho de campos e timeout dos serviços complementam a proteção. O Redis armazena somente hash do IP e contagem com expiração. Nenhum segredo é exposto ao navegador.
+O cliente reutiliza uma chave de idempotência por payload na sessão. O servidor usa essa chave como UUID do lead e grava no Redis apenas um fingerprint SHA-256 e o recibo por 24 horas; repetição retorna o mesmo recibo, sem reenviar e-mail/webhook/CAPI. O navegador também guarda os IDs já rastreados para não repetir eventos no reenvio. Um envio em processamento retorna 409 até concluir; a trava expira após 60 segundos em caso de interrupção da função. Com storage bloqueado, a proteção no componente e o UUID estável durante tentativas continuam ativos.
+
+O limite é de cinco tentativas por IP em 15 minutos. Em desenvolvimento há contador em memória. Na Vercel o Redis é obrigatório; ausência/falha retorna 503, sem conversão, para não deixar o endpoint público desprotegido. Honeypot, validação no cliente/servidor, restrição de origem, tamanho de campos e timeout dos serviços complementam a proteção. O Redis armazena hash do IP, contagem e recibos/fingerprints com expiração, sem o conteúdo pessoal do lead. Nenhum segredo é exposto ao navegador.
 
 O servidor gera UUID e data/hora UTC, normaliza os campos e envia o mesmo lead (incluindo consentimento, qualificação e origem) no corpo do webhook e no texto do e-mail. A origem preserva UTMs, gclid, gbraid, wbraid, fbclid, URL de entrada e referrer da primeira visita da sessão; indisponibilidade do sessionStorage usa memória. Retenção e acesso aos dados devem ser configurados nos destinos.
 

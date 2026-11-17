@@ -9,7 +9,7 @@ import {
   validateLead,
   whatsappUrl,
 } from "@/lib/lead";
-import { attribution, trackLead } from "@/lib/tracking";
+import { attribution, submissionKey, trackLead } from "@/lib/tracking";
 export default function ContactForm() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -18,6 +18,7 @@ export default function ContactForm() {
     delivered: boolean;
   } | null>(null);
   const submitting = useRef(false);
+  const attempt = useRef<{ data: string; id: string }>();
   const [phone, setPhone] = useState("");
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -36,9 +37,18 @@ export default function ContactForm() {
     setBusy(true);
     setError("");
     try {
+      const fingerprint = JSON.stringify(parsed.data);
+      if (attempt.current?.data !== fingerprint)
+        attempt.current = {
+          data: fingerprint,
+          id: await submissionKey(parsed.data),
+        };
       const response = await fetch("/api/lead", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Idempotency-Key": attempt.current.id,
+        },
         body: JSON.stringify(parsed.data),
       });
       const body = await response.json();
