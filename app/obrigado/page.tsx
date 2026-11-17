@@ -1,6 +1,5 @@
 "use client";
 
-import Script from "next/script";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -9,16 +8,6 @@ export default function Obrigado() {
   return (
     <main>
       <Header />
-
-      <Script id="google-ads-conversion">
-        {`
-          gtag('event', 'conversion', {
-            'send_to': 'AW-17442865573/SXGhCIqxj_QcEKWDtP1A',
-            'value': 1.0,
-            'currency': 'BRL'
-          });
-        `}
-      </Script>
 
       <section
         className="relative min-h-screen flex items-center bg-cover bg-center"
