@@ -9,14 +9,14 @@ import {
   validateLead,
   whatsappUrl,
 } from "@/lib/lead";
-import { attribution, submissionKey, trackLead } from "@/lib/tracking";
+import { attribution, submissionKey, trackSavedLead } from "@/lib/tracking";
 export default function ContactForm() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [result, setResult] = useState<{
     url: string;
-    delivered: boolean;
   } | null>(null);
+  const [fallback, setFallback] = useState("");
   const submitting = useRef(false);
   const attempt = useRef<{ data: string; id: string }>();
   const [phone, setPhone] = useState("");
@@ -35,6 +35,7 @@ export default function ContactForm() {
     }
     submitting.current = true;
     setBusy(true);
+    setFallback("");
     setError("");
     try {
       const fingerprint = JSON.stringify(parsed.data);
@@ -52,15 +53,12 @@ export default function ContactForm() {
         body: JSON.stringify(parsed.data),
       });
       const body = await response.json();
-      if (!response.ok)
-        throw new Error(
-          body.error || "Não foi possível enviar. Tente novamente.",
-        );
+      trackSavedLead(parsed.data, response.ok, body);
       const url = whatsappUrl(parsed.data);
-      setResult({ url, delivered: body.delivered });
-      trackLead(parsed.data, body.id, body.qualified);
+      setResult({ url });
       window.open(url, "_blank", "noopener,noreferrer");
     } catch (err) {
+      setFallback(whatsappUrl(parsed.data));
       setError(
         err instanceof Error
           ? err.message
@@ -82,11 +80,7 @@ export default function ContactForm() {
       </h2>
       {result ? (
         <div role="status" className="mt-6 space-y-4">
-          <p>
-            {result.delivered
-              ? "Obrigado! Recebemos suas informações."
-              : "Obrigado! Continue pelo WhatsApp para garantir o contato com a equipe."}
-          </p>
+          <p>Obrigado! Recebemos suas informações.</p>
           <a
             className="btn btn-primary"
             href={result.url}
@@ -215,6 +209,20 @@ export default function ContactForm() {
           {error && (
             <p role="alert" className="sm:col-span-2 text-red-200">
               {error}
+              {fallback && (
+                <>
+                  {" "}
+                  <a
+                    href={fallback}
+                    data-no-conversion
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                  >
+                    Continuar no WhatsApp
+                  </a>
+                </>
+              )}
             </p>
           )}
           <button

@@ -34,7 +34,7 @@ Landing do anúncio: `/alto-padrao/casas#formulario`. O mesmo formulário qualif
 
 ### Configuração na Vercel
 
-Copie `.env.example` para `.env.local` no desenvolvimento. Configure os valores reais diretamente na Vercel, primeiro no ambiente **Preview** (branch `feat/leads-tracking`). Variáveis `NEXT_PUBLIC_*` exigem novo build depois da configuração. Não inclua credenciais em commits, prints ou logs.
+Copie `.env.example` para `.env.local` no desenvolvimento. Configure os valores reais diretamente na Vercel, primeiro no ambiente **Preview** (branch de teste). Variáveis `NEXT_PUBLIC_*` exigem novo build depois da configuração. Não inclua credenciais em commits, prints ou logs.
 
 | Variável | Uso |
 | --- | --- |
@@ -42,21 +42,24 @@ Copie `.env.example` para `.env.local` no desenvolvimento. Configure os valores 
 | `LEAD_TO_EMAIL` | E-mail do responsável |
 | `LEAD_FROM_EMAIL` | Remetente autorizado em domínio verificado no Resend, ex. `Corddiali <site@dominio-verificado>` |
 | `LEAD_WEBHOOK_URL` | Opcional: endpoint HTTPS de planilha/CRM que recebe o JSON completo; deve responder 2xx |
-| `UPSTASH_REDIS_REST_URL` | Redis REST para contador de tentativas compartilhado entre instâncias Vercel |
+| `UPSTASH_REDIS_REST_URL` | Redis REST para leads, fila de pendências e limite por IP |
 | `UPSTASH_REDIS_REST_TOKEN` | Token Redis, somente servidor |
 | `NEXT_PUBLIC_GADS_ID` | `AW-17442865573` (a tag existente é mantida) |
 | `NEXT_PUBLIC_GADS_LABEL_FORM` | `r6AGCKDi6LkdEKWDtP1A`, sem ID ou barra; vazio desativa esse envio |
 | `NEXT_PUBLIC_GADS_LABEL_QUALIFIED` | `ctJQCKPi6LkdEKWDtP1A`; vazio desativa esse envio |
 | `NEXT_PUBLIC_META_PIXEL_ID` | `1106058259251298`; vazio mantém Pixel desativado |
 | `META_CAPI_TOKEN` | Opcional, somente servidor: ativa Conversions API com o mesmo Pixel/eventID |
+| `TELEGRAM_BOT_TOKEN` | Credencial do bot de avisos e alertas |
+| `TELEGRAM_CHAT_ID` | Conversa que recebe os avisos |
+| `LEADS_ADMIN_TOKEN` | Segredo aleatório de alta entropia para a rota administrativa e recuperação do log |
 
-O cliente reutiliza uma chave de idempotência por payload na sessão. O servidor usa essa chave como UUID do lead e grava no Redis apenas um fingerprint SHA-256 e o recibo por 24 horas; repetição retorna o mesmo recibo, sem reenviar e-mail/webhook/CAPI. O navegador também guarda os IDs já rastreados para não repetir eventos no reenvio. Um envio em processamento retorna 409 até concluir; a trava expira após 60 segundos em caso de interrupção da função. Com storage bloqueado, a proteção no componente e o UUID estável durante tentativas continuam ativos.
+O servidor grava os dados validados, origem, qualificação e data/hora UTC na chave `corddiali:lead:<UUID>`, junto com a inclusão no índice de pendentes. O registro não expira automaticamente. O mesmo UUID e conteúdo retornam o recibo existente. A reutilização do UUID com outros dados retorna 409.
 
-O limite é de cinco tentativas por IP em 15 minutos. Em desenvolvimento há contador em memória. Na Vercel o Redis é obrigatório; ausência/falha retorna 503, sem conversão, para não deixar o endpoint público desprotegido. Honeypot, validação no cliente/servidor, restrição de origem, tamanho de campos e timeout dos serviços complementam a proteção. O Redis armazena hash do IP, contagem e recibos/fingerprints com expiração, sem o conteúdo pessoal do lead. Nenhum segredo é exposto ao navegador.
+O limite permanece em cinco tentativas por IP em 15 minutos. Se a consulta do limite falhar, a API registra um aviso e tenta salvar. Se o salvamento falhar, a resposta é 503, com continuação pelo WhatsApp. O servidor tenta emitir um registro estruturado `lead_recovery_v1` nos logs privados com o cadastro cifrado. Para recuperação, preserve o segredo administrativo vigente na data do incidente e consulte o registro antes da expiração dos logs. A chave AES-256-GCM é SHA-256 do prefixo UTF-8 `corddiali-recovery-v1`, seguido de um byte zero e do segredo em UTF-8. IV, tag e ciphertext estão em base64. O teste de recuperação demonstra a leitura do registro. Se o segredo estiver ausente, o log informa a falha do backup.
 
-O servidor gera UUID e data/hora UTC, normaliza os campos e envia o mesmo lead (incluindo consentimento, qualificação e origem) no corpo do webhook e no texto do e-mail. A origem preserva UTMs, gclid, gbraid, wbraid, fbclid, URL de entrada e referrer da primeira visita da sessão; indisponibilidade do sessionStorage usa memória. Retenção e acesso aos dados devem ser configurados nos destinos.
+Após salvar, o servidor tenta Telegram, Resend e webhook configurado em paralelo, com timeout de quatro segundos por chamada. A resposta contém `saved:true`; `delivered` indica se algum canal confirmou. Uma falha mantém o cadastro pendente e gera uma tentativa separada de alerta no Telegram. Se o próprio Telegram estiver indisponível, a pendência continua consultável.
 
-As entregas Resend/webhook são independentes e têm timeout de oito segundos. A resposta 200 inclui `id`, `qualified` e `delivered`. Se nenhum destino aceitar, o servidor registra somente o ID/destino da falha e retorna `delivered:false`; a interface orienta continuar pelo WhatsApp, sem afirmar que o lead foi recebido. Não há banco ou fila de retentativa: neste caso, o contato depende de o visitante continuar no WhatsApp. Falhas de validação (400), origem (403), limite (429) e proteção indisponível (503) não geram conversões.
+Use `Authorization: Bearer <LEADS_ADMIN_TOKEN>` no cabeçalho de ambas as operações administrativas. GET `/api/lead/pending?offset=0` retorna até 50 registros, incluindo canais e dados de contato. Avance o offset em 50 para consultar a próxima página. POST na mesma rota com JSON `{"id":"UUID-do-lead"}` tenta os canais pendentes ou falhos desse registro; o reenvio é manual. Uma trava temporária impede dois trabalhadores simultâneos para o mesmo ID. Se um provedor aceitar uma mensagem e a resposta se perder, um reenvio poderá duplicar o aviso em canais sem garantia de idempotência. O cadastro conserva o mesmo ID.
 
 ### Eventos
 
@@ -75,7 +78,7 @@ As entregas Resend/webhook são independentes e têm timeout de oito segundos. A
 | Link de continuidade após formulário / `/obrigado` | Marcado `data-no-conversion`, não repete eventos de clique/conversão |
 | Visita direta a `/obrigado` | Nenhuma conversão de lead |
 
-O `window.open` ocorre depois dos eventos. Se o navegador bloquear a abertura, há um link de continuidade visível. Scripts ausentes ou com erro não impedem a continuidade. API 200 representa aceite do formulário; conforme solicitado, falha na entrega não impede a conversão nem o WhatsApp.
+O `window.open` ocorre depois dos eventos. Se o navegador bloquear a abertura, há um link de continuidade visível. Scripts ausentes ou com erro não impedem a continuidade. O navegador exige HTTP 2xx e recibo com `saved:true` e ID para registrar a conversão.
 
 ### Verificação
 
