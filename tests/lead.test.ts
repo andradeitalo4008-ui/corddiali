@@ -59,7 +59,7 @@ test("validação e normalização", () => {
     { nome: "A" },
     { inicio: "amanhã" },
     { investimento: "0" },
-    { local: "" },
+    
     { mensagem: "a".repeat(3001) },
   ])
     assert.ok(validateLead({ ...valid, ...patch }).error);
@@ -75,6 +75,26 @@ function request(input: unknown) {
     body: JSON.stringify(input),
   });
 }
+test("cadastro curto: só nome e WhatsApp; formato antigo segue válido", () => {
+  const short = validateLead({
+    nome: "Maria",
+    whatsapp: "(49) 99136-0745",
+    consentimento: true,
+    origem: { gclid: "g1", utm_source: "google" },
+  });
+  assert.ok(short.data, short.error);
+  assert.equal(short.data.email, "");
+  assert.equal(isQualified(short.data), false);
+  assert.equal(short.data.origem.gclid, "g1");
+  assert.ok(validateLead({ nome: "Maria", consentimento: true }).error);
+  assert.ok(
+    validateLead({ nome: "Maria", whatsapp: "49991360745" }).error,
+    "aceite obrigatório",
+  );
+  assert.ok(validateLead(valid).data);
+  assert.ok(isQualified(validateLead(valid).data!));
+});
+
 test("limite por IP: 5 tentativas a cada 15 minutos", async () => {
   const vercel = process.env.VERCEL;
   delete process.env.VERCEL;
@@ -250,10 +270,11 @@ test("persistência, avisos, reenvio e conversões", async (t) => {
       ["Lead", "LeadQualificado"],
     );
     assert.ok(events.every((e: { event_id: string }) => e.event_id === id));
-    assert.deepEqual(
-      JSON.parse(calls.find((c) => c.channel === "email")!.body.text),
-      lead,
-    );
+    const mail = calls.find((c) => c.channel === "email")!.body.text;
+    assert.match(mail, new RegExp("ID do lead: " + id));
+    assert.match(mail, /Nome: Pessoa Teste/);
+    assert.match(mail, /Telefone: [+]5549991360745/);
+    assert.doesNotMatch(mail, /Vivapark|terreno/i);
     assert.deepEqual(calls.find((c) => c.channel === "webhook")!.body, lead);
     await submit(id);
     assert.equal(calls.length, 4);

@@ -57,9 +57,8 @@ export function validateLead(input: unknown): {
 } {
   if (!input || typeof input !== "object") return { error: "Dados inválidos." };
   const raw = input as Record<string, unknown>;
-  const fields = [
-    "nome",
-    "whatsapp",
+  const required = ["nome", "whatsapp"] as const;
+  const optional = [
     "email",
     "terreno",
     "local",
@@ -69,10 +68,18 @@ export function validateLead(input: unknown): {
     "website",
   ] as const;
   const data = {} as LeadInput;
-  for (const key of fields) {
-    if (typeof raw[key] !== "string")
+  for (const key of [...required, ...optional]) {
+    const value = raw[key];
+    // Only nome and whatsapp are required; legacy fields may be absent.
+    if (value === undefined || value === null) {
+      if ((required as readonly string[]).includes(key))
+        return { error: "Preencha nome e WhatsApp." };
+      data[key] = "";
+      continue;
+    }
+    if (typeof value !== "string")
       return { error: "Preencha os campos do formulário." };
-    data[key] = (raw[key] as string).trim();
+    data[key] = value.trim();
     if (data[key].length > (key === "mensagem" ? 3000 : 200))
       return { error: "Um dos campos excede o tamanho permitido." };
   }
@@ -80,15 +87,20 @@ export function validateLead(input: unknown): {
   data.email = data.email.toLowerCase();
   if (
     data.nome.length < 2 ||
-    !/^[1-9]{2}(?:9\d{8}|[2-9]\d{7})$/.test(data.whatsapp) ||
-    !data.local ||
-    !terrenos.includes(data.terreno as (typeof terrenos)[number]) ||
-    !investimentos.includes(
-      data.investimento as (typeof investimentos)[number],
-    ) ||
-    !prazos.includes(data.inicio as (typeof prazos)[number])
+    !/^[1-9]{2}(?:9\d{8}|[2-9]\d{7})$/.test(data.whatsapp)
   )
-    return { error: "Confira nome, WhatsApp e os campos obrigatórios." };
+    return { error: "Confira seu nome e WhatsApp com DDD." };
+  // Legacy qualifying fields are optional, but must be valid when sent.
+  if (
+    (data.terreno &&
+      !terrenos.includes(data.terreno as (typeof terrenos)[number])) ||
+    (data.investimento &&
+      !investimentos.includes(
+        data.investimento as (typeof investimentos)[number],
+      )) ||
+    (data.inicio && !prazos.includes(data.inicio as (typeof prazos)[number]))
+  )
+    return { error: "Confira os campos informados." };
   if (data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))
     return { error: "Informe um e-mail válido." };
   if (raw.consentimento !== true)
@@ -114,10 +126,10 @@ export function whatsappUrl(data: LeadInput) {
     `Olá, sou ${data.nome}. Gostaria de conversar sobre um projeto com a Corddiali.`,
     `WhatsApp: ${normalizePhone(data.whatsapp)}`,
     data.email && `E-mail: ${data.email}`,
-    `Já tenho terreno: ${data.terreno}`,
-    `Local: ${data.local}`,
-    `Investimento: ${data.investimento}`,
-    `Início: ${data.inicio}`,
+    data.terreno && `Já tenho terreno: ${data.terreno}`,
+    data.local && `Local: ${data.local}`,
+    data.investimento && `Investimento: ${data.investimento}`,
+    data.inicio && `Início: ${data.inicio}`,
     data.mensagem && `Mensagem: ${data.mensagem}`,
   ]
     .filter(Boolean)

@@ -51,7 +51,10 @@ export function newEntry(lead: Lead, fingerprint: string): RecordEntry {
     status: "pending",
     channels: {
       email: "pending",
-      telegram: "pending",
+      telegram:
+        process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID
+          ? "pending"
+          : "disabled",
       webhook: process.env.LEAD_WEBHOOK_URL ? "pending" : "disabled",
     },
   };

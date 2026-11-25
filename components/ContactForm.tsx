@@ -1,14 +1,7 @@
 "use client";
 import { FormEvent, useRef, useState } from "react";
 import Link from "next/link";
-import {
-  investimentos,
-  locais,
-  prazos,
-  terrenos,
-  validateLead,
-  whatsappUrl,
-} from "@/lib/lead";
+import { validateLead, whatsappUrl } from "@/lib/lead";
 import { attribution, submissionKey, trackSavedLead } from "@/lib/tracking";
 export default function ContactForm() {
   const [busy, setBusy] = useState(false);
@@ -56,7 +49,6 @@ export default function ContactForm() {
       trackSavedLead(parsed.data, response.ok, body);
       const url = whatsappUrl(parsed.data);
       setResult({ url });
-      window.open(url, "_blank", "noopener,noreferrer");
     } catch (err) {
       setFallback(whatsappUrl(parsed.data));
       setError(
@@ -76,19 +68,18 @@ export default function ContactForm() {
     >
       <div className="eyebrow">Seu projeto</div>
       <h2 className="display text-2xl md:text-3xl mt-2">
-        Conte-nos um pouco sobre seu projeto
+        Fale com a Corddiali sobre seu projeto
       </h2>
       {result ? (
         <div role="status" className="mt-6 space-y-4">
-          <p>Obrigado! Recebemos suas informações.</p>
+          <p>Recebemos seu contato. Nossa equipe vai falar com você pelo WhatsApp informado.</p>
           <a
             className="btn btn-primary"
             href={result.url}
-            data-no-conversion
             target="_blank"
             rel="noopener noreferrer"
           >
-            Continuar no WhatsApp
+            Conversar agora no WhatsApp
           </a>
         </div>
       ) : (
@@ -125,62 +116,6 @@ export default function ContactForm() {
               }}
             />
           </div>
-          <div>
-            <label htmlFor="email">E-mail (opcional)</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              maxLength={200}
-              autoComplete="email"
-            />
-          </div>
-          {[
-            ["terreno", "Você já tem terreno?", terrenos],
-            [
-              "investimento",
-              "Quanto pretende investir na obra?",
-              investimentos,
-            ],
-            ["inicio", "Quando pretende começar?", prazos],
-          ].map(([name, label, options]) => (
-            <div key={name as string}>
-              <label htmlFor={name as string}>{label} *</label>
-              <select
-                id={name as string}
-                name={name as string}
-                required
-                defaultValue=""
-              >
-                <option value="" disabled>
-                  Selecione
-                </option>
-                {(options as readonly string[]).map((value) => (
-                  <option key={value}>{value}</option>
-                ))}
-              </select>
-            </div>
-          ))}
-          <div className="sm:col-span-2">
-            <label htmlFor="local">Onde fica o terreno? *</label>
-            <input
-              id="local"
-              name="local"
-              list="locais"
-              required
-              maxLength={200}
-              placeholder="Cidade ou condomínio (ou local desejado)"
-            />
-            <datalist id="locais">
-              {locais.map((local) => (
-                <option key={local} value={local} />
-              ))}
-            </datalist>
-          </div>
-          <div className="sm:col-span-2">
-            <label htmlFor="mensagem">Mensagem (opcional)</label>
-            <textarea id="mensagem" name="mensagem" rows={2} maxLength={3000} />
-          </div>
           <div aria-hidden="true" className="absolute -left-[10000px]">
             <label htmlFor="website">Website</label>
             <input
@@ -214,7 +149,6 @@ export default function ContactForm() {
                   {" "}
                   <a
                     href={fallback}
-                    data-no-conversion
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline"
@@ -231,7 +165,7 @@ export default function ContactForm() {
             className="btn btn-primary justify-center sm:col-span-2 disabled:opacity-60"
             type="submit"
           >
-            {busy ? "Enviando…" : "Enviar e conversar no WhatsApp"}
+            {busy ? "Enviando…" : "Quero falar sobre meu projeto"}
           </button>
         </form>
       )}

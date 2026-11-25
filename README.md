@@ -109,3 +109,12 @@ window.fbq = (...args) => { console.log('fbq', ...args); originalFbq?.(...args);
 5. Sem consentimento, WhatsApp inválido e campos obrigatórios vazios: envio bloqueado. API inválida retorna 400; sexta tentativa do mesmo IP retorna 429. Aguarde 15 minutos antes de repetir.
 
 A publicação em produção exige revisão/aprovação do PR; este branch só deve gerar preview.
+
+### Cadastro curto (primeiro contato)
+
+O formulário pede apenas **nome** e **WhatsApp com DDD**, mais o aceite da Política de Privacidade. O botão é "Quero falar sobre meu projeto". Ao enviar, a API salva o cadastro (ID, origem da visita, UTMs, `gclid`/`gbraid`/`wbraid`/`fbclid`) e a Resend envia ao comercial um e-mail com nome, telefone e ID do lead. Se o e-mail falhar, o cadastro continua salvo e pendente para reenvio (rota administrativa descrita acima).
+
+- A conversão de formulário dispara só depois que a API confirma `saved:true`. Falha ao salvar (503) não dispara nenhuma conversão.
+- O cadastro curto conta como **lead captado** (`lead_qualificado:false`). A qualificação acontece no atendimento. A conversão qualificada só dispara em envios no formato antigo, que a API continua aceitando (terreno, local, investimento e início opcionais).
+- Depois do envio, a página mostra a confirmação e o botão "Conversar agora no WhatsApp". A conversa não abre sozinha; o clique nesse botão é contabilizado como "Clique no WhatsApp (site)", evento separado do formulário. O comercial recebe o telefone mesmo que o visitante nunca abra o WhatsApp.
+- Canais não configurados (Telegram sem token/chat, webhook sem URL) ficam `disabled` e não mantêm o lead pendente.

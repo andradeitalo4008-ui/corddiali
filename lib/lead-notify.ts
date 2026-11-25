@@ -1,4 +1,5 @@
 import { claim, finish, type Channel, type Lead } from "./lead-store";
+import { normalizePhone } from "./lead";
 
 export async function send(
   url: string,
@@ -39,12 +40,13 @@ async function notify(channel: Channel, lead: Lead) {
         `Novo lead Corddiali — ${lead.id}`,
         lead.nome,
         "Telefone: " + lead.whatsapp,
-        "Terreno: " + lead.terreno,
-        "Condomínio/local: " + lead.local,
-        "Investimento: " + lead.investimento,
-        "Prazo: " + lead.inicio,
+        lead.terreno && "Terreno: " + lead.terreno,
+        lead.local && "Condomínio/local: " + lead.local,
+        lead.investimento && "Investimento: " + lead.investimento,
+        lead.inicio && "Prazo: " + lead.inicio,
         "Origem: " + (origin || "direta"),
       ]
+        .filter(Boolean)
         .join("\n")
         .slice(0, 4000),
     );
@@ -62,8 +64,18 @@ async function notify(channel: Channel, lead: Lead) {
     {
       from: LEAD_FROM_EMAIL,
       to: [LEAD_TO_EMAIL],
-      subject: `Novo lead Corddiali${lead.qualified ? " — qualificado" : ""}`,
-      text: JSON.stringify(lead, null, 2),
+      subject: `Novo lead Corddiali — ${lead.nome}`,
+      text: [
+        `Nome: ${lead.nome}`,
+        `Telefone: ${normalizePhone(lead.whatsapp)}`,
+        `ID do lead: ${lead.id}`,
+        `Recebido em: ${lead.created_at}`,
+        `Origem: ${
+          Object.entries(lead.origem)
+            .map(([k, v]) => `${k}=${v}`)
+            .join(" | ") || "direta"
+        }`,
+      ].join("\n"),
       ...(lead.email ? { reply_to: lead.email } : {}),
     },
     { ...idHeader, Authorization: "Bearer " + RESEND_API_KEY },
