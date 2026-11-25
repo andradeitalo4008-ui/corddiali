@@ -122,3 +122,21 @@ export async function submissionKey(data: LeadInput) {
   }
   return id;
 }
+
+export function trackSavedLead(
+  data: LeadInput,
+  ok: boolean,
+  receipt: {
+    saved?: boolean;
+    id?: string;
+    qualified?: boolean;
+    error?: string;
+  },
+  track = trackLead,
+) {
+  if (!ok || receipt.saved !== true || !receipt.id)
+    throw new Error(
+      receipt.error || "Não foi possível enviar. Tente novamente.",
+    );
+  track(data, receipt.id, receipt.qualified === true);
+}
