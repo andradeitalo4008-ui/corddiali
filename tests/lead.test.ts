@@ -7,6 +7,7 @@ import {
   prazos,
   terrenos,
   whatsappUrl,
+  nationalDigits,
 } from "../lib/lead";
 import { POST } from "../app/api/lead/route";
 import { NextRequest } from "next/server";
@@ -27,6 +28,15 @@ const valid = {
     landing_page: "https://example.com/alto-padrao/casas",
   },
 };
+test("campo de telefone: autofill com +55 e zero não corta o número", () => {
+  assert.equal(nationalDigits("+55 49 99136-0745"), "49991360745");
+  assert.equal(nationalDigits("5549991360745"), "49991360745");
+  assert.equal(nationalDigits("+55 49 3361-0745"), "4933610745");
+  assert.equal(nationalDigits("049 99136-0745"), "49991360745");
+  // DDD 55 (RS) permanece intacto.
+  assert.equal(nationalDigits("55 99136-0745"), "55991360745");
+  assert.equal(nationalDigits("(55) 99136-07451"), "55991360745");
+});
 test("qualificação: todas as combinações de terreno, investimento e prazo", () => {
   for (const terreno of terrenos)
     for (const investimento of investimentos)

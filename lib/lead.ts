@@ -47,6 +47,14 @@ export type LeadInput = {
   website: string;
   origem: Record<string, string>;
 };
+// Digits for the form field: drops the country code added by autofill/paste
+// ("+55 49 ...") and the trunk zero ("049 ..."). A value starting with "(" is
+// already masked (user is typing), so a DDD 55 number is never rewritten.
+export function nationalDigits(value: string) {
+  let n = value.replace(/\D/g, "");
+  if (!value.startsWith("(") && /^55\d{10,11}$/.test(n)) n = n.slice(2);
+  return n.replace(/^0+/, "").slice(0, 11);
+}
 export function normalizePhone(value: string) {
   const n = value.replace(/\D/g, "");
   return `+55${n}`;

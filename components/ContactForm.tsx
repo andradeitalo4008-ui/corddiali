@@ -1,7 +1,7 @@
 "use client";
 import { FormEvent, useRef, useState } from "react";
 import Link from "next/link";
-import { validateLead, whatsappUrl } from "@/lib/lead";
+import { nationalDigits, validateLead, whatsappUrl } from "@/lib/lead";
 import { attribution, submissionKey, trackSavedLead } from "@/lib/tracking";
 export default function ContactForm() {
   const [busy, setBusy] = useState(false);
@@ -107,7 +107,7 @@ export default function ContactForm() {
               value={phone}
               placeholder="(49) 99136-0745"
               onChange={(e) => {
-                const n = e.target.value.replace(/\D/g, "").slice(0, 11);
+                const n = nationalDigits(e.target.value);
                 setPhone(
                   n.length > 2
                     ? `(${n.slice(0, 2)}) ${n.slice(2, n.length > 10 ? 7 : 6)}${n.length > 6 ? "-" + n.slice(n.length > 10 ? 7 : 6) : ""}`
